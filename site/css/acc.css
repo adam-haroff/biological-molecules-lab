@@ -1,0 +1,156 @@
+.accContentOn { /* SWITCHES ON WHEN 508 IS ACTIVE  */
+    display: none;
+    position: relative;
+}
+
+/*============================
+== TOP BAR ACCESSIBILITY
+=============================*/
+#topBar .accessOff {
+    background-color:#3D3D3D;
+}
+#topBar .accessOn {
+    background-color:#E85C1C;
+    color:#FFFFFF;
+    border-radius: 10%;
+    -webkit-box-shadow:0 0 0 2px #B94800 inset;
+    -moz-box-shadow:0 0 0 2px #B94800 inset;
+    box-shadow:0 0 0 2px #B94800 inset;
+}
+#topBar #accessText ul{  /* FOR THE 508 TEXT AT TOP BAR*/
+    position:absolute;
+    top: 0px;
+    left:0px;
+    list-style-type: none;
+}
+#topBar #accessText li {   /* FOR THE 508 TEXT */
+    display: inline;
+    position:relative;   
+    padding-top:8px !important;
+    float:left !important;
+    right:300px;
+    font-size:13px !important;
+    color:#ffffff !important;
+    text-align:center !important;
+    z-index:201 !important;
+    color: white;
+}
+#topBar #accessText .sideLine {    /* FOR THE 508 TEXT */
+    border-right: 3px solid #3d3d3d;
+    padding:0 5px 0 5px;
+    height:34px;
+}
+#topBar #accessText .noLine {   /* FOR THE 508 TEXT */
+    padding:0 3px 0 5px;
+}
+/*============================
+== SIDE PANEL ACCESSIBILITY
+============================*/
+.accessOffArrL{             /* ACCESSIBILITY FOR LEFT ARROW IN PROCEDURES PANEL */
+    background-image: url(../images/arrowOrange.png) !important;
+    transform: scaleX(-1) !important;
+}
+.accessOffArrR{           /* ACCESSIBILITY FOR RIGHT ARROW IN PROCEDURES PANEL */
+    background-image: url(../images/arrowOrange.png) !important;
+    transform:none !important;
+}
+.sideLetterAccessOff {         /* STYLING OF SIDE LETTER WITH NO 508 */
+    background-color:rgba(51,51,51, 0.85);
+    color:#8C8C8C;
+} 
+.sideLetterAccessOn {           /* STYLING OF SIDE LETTER WITH 508 */
+    background-color:#E85C1C;
+    border-radius: 10%;
+    -webkit-box-shadow:0 0 0 2px #B94800 inset;
+    -moz-box-shadow:0 0 0 2px #B94800 inset;
+    box-shadow:0 0 0 2px #B94800 inset;
+    color:white;
+}
+/*============================
+== CONTENT ACCESSIBILITY
+============================*/
+#accArea{
+    position: absolute;
+    width: 1012px;
+    height:672px;
+    top: 0;
+    left: 0;
+}
+.accTxt{
+    position: absolute;
+    background:#E85C1C;
+    border: 2px solid #B94800;
+    -moz-border-radius:2px; 
+    -webkit-border-radius: 2px; 
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+.arrow-up {
+    position: absolute;
+    left: 3px;
+    top: -9px;
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;	
+    border-bottom: 7px solid #B94800;
+}
+
+.arrow-down {
+    position: absolute;
+    left: 3px;
+    top: 21px;
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;	
+    border-top: 7px solid #B94800;
+}
+.arrow-right {
+    position: absolute;
+    top: 4px;
+    left: 21px;
+    width: 0; 
+    height: 0; 
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid #B94800;
+}
+.arrow-left {
+    position: absolute;
+    top: 4px;
+    left: -9px;
+    width: 0; 
+    height: 0; 
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent; 
+    border-right:7px solid #B94800; 
+}
+
+.accTxt p, #itemPopup .accTxt p{
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;   
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+/* POSITIONING OF ACC CALLOUT EXAMPLES ON INDEX PAGE */
+#acc_01{top:300px; left: 100px;}
+#acc_02{top:300px; left: 150px;}
+#acc_03{top:300px; left: 200px;}
+#acc_04{top:300px; left: 250px;}
+#acc_05{top:300px; left: 300px;}
+
+#acc_Bonds {top: 0px;
+left: 0px;
+}
+
+#acc_Atoms{ left:0px ; top:-30px; }
+.currentSection{
+	/*background-color: #838383 !important;*/
+	background: linear-gradient(to bottom, #9875a6 0%,#4a2858 100%); !important;
+}

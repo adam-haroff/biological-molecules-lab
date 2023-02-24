@@ -1,0 +1,380 @@
+/*========================================
+// POPUP AREA STYLES
+//========================================*/
+#popContainer{                 /* MODAL BACKGROUND FOR DIALOGS */
+    width: 1332px;
+    height: 727px;
+    top:0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.6);
+	z-index:200;
+	overflow:hidden;
+}
+#popup{                        /* DIV FOR THE POPUPS */
+    position: absolute;
+}
+.normalL, .normalS {                      /* STYLES THAT ARE USED FOR ALL POPUPS; normalS IS THE SMALL ONE AT BEGINNING */  
+    color:black;
+    border:6px solid rgba(0,0,0, 0.5);
+    background-color:#cfcfcf;
+    position:relative;
+    -moz-background-clip: padding;     
+    -webkit-background-clip: padding;  
+    background-clip: padding-box; 
+    z-index:199;
+}
+.normalS {                      /* SIZE FOR THE FIRST POPUP THAT APPEARS; ONLY ONCE DURING APPLICATION */  
+    margin: 178px 0 0 327px;
+    height: 365px;
+    width: 662px;
+}
+.normalL{                      /* SIZE FOR POPUPS; HEADER BUTTONS AND OPENING POPUPS */ 
+    margin: 94px 0 0 186px;
+    height: 530px;
+    width: 950.8px;
+}
+.normalS p {             /*  STYLES FOR P TAG IN FIRST POPUP */
+	padding-top:30px;
+	line-height:140%;
+	font-size:21px;
+	font-weight:400;
+	text-align:center;
+}
+.normalS .bolder {   /* MAKE SELECTS WORDS IN FIRST POPUP BOLD */
+	font-weight:700;
+}
+.normalS .buttonS {  /* STYLE FOR 'CONTINUE' IN BUTTON ON FIRST POPUP */
+	font-size:22px;
+	line-height:172%;
+}
+.normalL p {                /*     FORMAT TEXT OF MAIN TUTORIALS POPUP */
+    text-align:center;
+    padding-top:35px;
+    line-height:183%;
+	font-size: 18px;
+	font-weight: 400;
+}
+.normalL  h1, .normalS h1 {                  /* FOR THE MAIN TUTORIALS/INTRODUCTION/FORMULAS/VIDEOS H1 POPUP; MAY NOT BE NEEDED FOR FIRST POPUP */  
+    text-align:center; 
+    padding-top:50px;
+    font-weight: 600 !important;
+    font-size:22px !important;
+
+}
+.normalL, .secondLine {             /* FOR THE MAIN TUTORIALS POPUP SECOND LINE OF TEXT */  
+	font-weight:400;
+	font-size:18px;
+}
+.normalL .divide, .normalS .divide{      /*  THE LINE IN FIRST POPUP; STYLES MAY BE DIFFERENT IF NEEDED IN .normalL */
+    width: 585px;
+    margin: auto;
+    margin-top:27px;
+	margin-bottom:-5px;
+    border: 1px solid black;
+}
+.exitBtn:hover {                         /* STYLE OF HOVER FOR EXIT/CONTINUE/NEXT... BUTTONS ON POPUPS */
+    background-color:#B94800 !important;
+}
+.normalS .exitBtn, .normalL .exitBtn{      /* STYLES FOR ALL BUTTONS ON POPUPS */
+    position: absolute;
+	padding: 0;
+	cursor: pointer;
+   	border:2px solid #B94800;
+    border-radius: 4px;
+    background-color:#E85C1C;
+	color: white;
+	text-align:center;
+}
+.normalL .exitBtn{        /*  EXIT BUTTON ON BIGGER POPUPS */
+    top: 7px;
+    right: 7px;
+	width:70px;
+    height: 33px;
+}
+.normalS .exitBtnL{             /*   CONTINUE BUTTON ON FIRST POPUP  */
+    width: 122.35px !important;
+	height: 33px;
+    top: 304px !important;
+    left:280px !important;
+}
+.normalS .exitBtn p, .normalL .exitBtn p{  /* STYLES TEXT IN THE BUTTONS */
+    width: 100%;
+    padding: 0px !important;
+    text-align:center !important;
+    font-weight:700 !important;
+    font-size:20px !important;
+    /* margin-top:-1px;  1/10/2017 */
+}
+.tutExit{                    /* EXIT BUTTON ON NAVIGATION TUTORIAL POPUP; MAY BE NEEDED ON INTRO POPUP, IF SIDE ARROWS ARE USED */
+    right: 62px !important;
+}
+.normalL .navButton {             /* FORMAT TEXT OF THE BUTTONS (IN CENTER) ON MAIN TUTORIALS POPUP */
+    width:336px;
+    height:43px;
+    border:3px solid #8C8C8C;
+    border-radius:8px;
+    color:white;
+    text-align:center;
+    background-color:#3D3D3D;
+    cursor:pointer;
+    font-size:18px !important;
+}
+.normalL .navButton:hover {             /* FORMAT TEXT OF THE BUTTONS ON MAIN TUTORIALS POPUP */
+    background-color:#8C8C8C !important;
+}
+.specialp {                  /* FORMAT THE BUTTONS ON TUTORIAL/VIDEO POPUP; SO THE ACCESSIBILITY CALLOUTS DONT MESS WITH CSS */
+	margin-top:-61px !important;
+}
+.specialp_1 {               /* FORMAT THE FIRST/TOP BUTTON ON TUTORIAL/VIDEO POPUP; SO THE ACCESSIBILITY CALLOUTS DONT MESS WITH CSS */
+	 padding-top:35px !important;
+}
+.tutText {                   /*	 HEIGHT OF AREA THAT HOLDS H1 AND TEXT(P) ON NAVIGATION POPUP */
+	 height:140.5px;
+	 width:826px;
+}
+.tutText h1 {                   /* FORMAT THE H1 IN NAVIGATION POPUP */
+	text-align:center; 
+        width: 100%;
+    padding:11.5px 0 0 0 !important;
+    font-weight: 600 !important;
+    font-size:20px !important;
+	position:absolute;
+}
+.tutText p {                   /* FORMAT THE P IN NAVIGATION POPUP; ABSOLUTE POSITION IN ORDER FOR THE CSS LEFT/RIGHT ARROWS TO WORK */
+	text-align:center !important;
+    line-height:125% !important;
+	font-size:16px;
+	font-weight: 400;
+	position:absolute;
+	left:55px;
+	top:10px;
+	width:818px;
+}
+#blackLeft {            /* FOR THE LITTLE LEFT BLACK ARROW ON FIRST PAGE OF NAVIGATION TUTORIAL POPUP */
+	position: absolute;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+    border-right: 9px solid black;
+	top: 63%;
+    left:67%;
+}
+#blackRight {            /* FOR THE LITTLE RIGHT BLACK ARROW ON FIRST PAGE OF NAVIGATION TUTORIAL POPUP */
+	position: absolute;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+    border-left: 9px solid black;
+	top: 63%;
+    left:34.5%;
+}
+.navImages{  /* FOR ALL IMAGES LOCATED IN THE NAVIGATION TUTORIAL */
+    width: 843px;
+    height: 382px;
+    margin: auto;
+    margin-top: 1.5px;
+	border-top:6px solid rgba(0,0,0, 0.8) !important;
+}
+.introp {     /* FORMAT THE P IN THE INTRODUCTION POPUP */
+	width:810px  !important;
+	padding-left:75px  !important;
+	text-align:center !important;
+	line-height:135% !important;
+}
+
+.accTxt p {       /* THE NUMBER/LETTER IN THE ACCESS TEXT BUBBLE */
+	font-weight: 600;
+	font-size:18px;
+	width:100%;
+	text-align:center;
+	margin-left:0;
+	margin-top:0;
+    line-height: 19px !important;
+    padding-top:0 !important;
+} 
+.accTxt {   /* THE SQUARE OF THE ACCESS TEXT BUBBLE; ON TUTORIALS POPUP */
+	width: 20px;
+	height: 20px; 
+	position: relative;
+	color:white;
+	background:#E85C1C;
+	border: 2px solid #B94800;
+	-moz-border-radius:3px; 
+	-webkit-border-radius: 3px; 
+	border-radius: 3px;
+	top:-32px;
+	left:670px;
+	visibility:hidden;
+} 
+/*
+.accTxt:before {   
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(194, 225, 245, 0);
+	border-right-color:#B94800;
+	border-width: 7px;
+	margin-top: -7px;
+}*/
+.accTxtOff {      /* HIDES THE ACCESSIBILITY CALLOUTS INITIALY ON TUTORIAL/VIDEO POPUPS */
+	visibility:visible;
+}
+
+
+/*==========================================
+=== POPUP ARROWS; ALONG THE SIDE  (BAR) ====               
+===========================================*/
+.arrowR_P{                 /* THE RIGHT ARROW; LARGE BAR OF COLOR */
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 48px;
+    height: 100%;
+    background-color: #545454;
+    transition: background-color 0.4s;
+    cursor: pointer;
+    display: inline-block;
+	border-left:6px solid rgba(42,42,42, 1)!important;
+}
+.arrowL_P{                   /* THE LEFT ARROW; LARGE BAR OF COLOR */
+    float: left;
+    position: absolute;
+	z-index:55;
+    width: 48px;
+    height: 100%;
+    background-color: #545454;
+    transition: background-color 0.4s;
+    cursor: pointer;
+    display: inline-block;
+	border-right:6px solid rgba(42,42,42, 1)!important;
+}
+.arrowL_P:hover, .arrowR_P:hover{      /* UMMMMMM, FOR HOVERS; IF YOU'RE HERE YOU SHOULD KNOW */
+    background-color:#8e8e8e;
+}
+.acc{                     /*THIS CLASS IS FOR ANY ORANGE BOX USED IN ACCESSIBILITY FUNCITONS*/
+    position: absolute;
+    color:white;
+    font-size: 18px;
+    background-color:#e45720;
+    border: 2px solid #b64306;
+    width: 23.5px;
+    height: 23.5px;
+   
+}
+.arrowL_P .acc{    /*ACCESSIBILITY SQUARE AROUND ARROW*/
+    width: 30px;
+    height: 30px;
+    top: 257px;
+    left:8px;   
+}
+.arrowR_P .acc{    /*ACCESSIBILITY SQUARE AROUND ARROW*/
+    width: 30px;
+    height: 30px;
+    top: 257px;
+    left:8px;
+}
+/*==========================================
+=== POPUP ARROWS(WHITE ARROW IN BAR)   =====
+===========================================*/
+.arrow-right_P {        /* THE RIGHT ARROW; LITTLE WHITE TRIANGLE IN LARGE BAR OF COLOR */
+    position: absolute;
+	width: 0; 
+	height: 0; 
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent;
+    border-left: 12px solid white;
+	top: 50%;
+    left:40%;	
+}
+.arrow-left_P {           /* THE LEFT ARROW; LITTLE WHITE TRIANGLE IN LARGE BAR OF COLOR */
+    position: absolute;
+	width: 0; 
+	height: 0; 
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent; 
+    border-right:12px solid white;
+	top: 50%;
+    left:37%;
+}
+
+/*==========================================
+=== DOLTS FOR THE INTRODUCTION POPUP   =====
+===========================================*/
+#introDolt{                 /* DOLT CONTAINER STYLES...THANK YOU AMINE */
+    width:100%;
+    height: 30px;
+    text-align: center;
+    display: table-cell;
+    position:absolute;
+    bottom:0;
+}
+#introDolt ul{              
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+
+}
+#introDolt li{              /* INITIAL STYLES FOR DOLTS WHEN THEY ARE CREATED */
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px 8px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+#introDolt li:last-of-type{
+    margin: 0;
+}
+#introDolt .inactive{       /* COLOR FOR INACTICVE DOLTS (REPLACED W/ JQUERY) */
+    background-color: grey;
+}
+#introDolt .active{         /* COLOR FOR ACTIVE DOLTS (REPLACED W/ JQUERY) */
+    background-color:white;
+}
+
+/*==========================================
+=== DOLTS FOR THE NAVIGATION TUTORIAL POPUP   =====
+===========================================*/
+#tutDolt{                 /* DOLT CONTAINER STYLES...THANK YOU AMINE */
+    width:100%;
+    height: 18px;
+    text-align: center;
+    display: table-cell;
+    position:absolute;
+    top:107px;
+}
+#tutDolt ul{                /* THE UL FOR THE DOLTS IN INTRODUCTION POPUP  */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+#tutDolt li{              /* INITIAL STYLES FOR DOLTS WHEN THEY ARE CREATED */
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 17px 8px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+#tutDolt li:last-of-type{   /*  I DON'T REALLY FEEL LIKE I SHOULD HAVE TO EXPLAIN.... */
+    margin: 0;
+}
+#tutDolt .inactive{       /* COLOR FOR INACTICVE DOLTS (REPLACED W/ JQUERY) */
+    background-color: grey;
+}
+#tutDolt .active{         /* COLOR FOR ACTIVE DOLTS (REPLACED W/ JQUERY) */
+    background-color: white;
+}

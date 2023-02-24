@@ -1,0 +1,590 @@
+@font-face {
+    font-family: 'Facit';
+    src: url('../fonts/facit/Facit-Semibold.eot');
+    src: url('../fonts/facit/Facit-Semibold.eot?#iefix') format('embedded-opentype'),
+        /* url('../fonts/facit/Facit-Semibold.woff') format('woff'),*/
+         url('../fonts/facit/Facit-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+::-moz-selection {
+    background: transparent
+}
+
+::selection {
+    background: transparent
+}
+
+.btn {
+    width: 150px;
+    color: #7B46A3;
+    text-align: center;
+    padding: 2px;
+    left: 20px;
+    margin-left: 70px;
+}
+.main-content-wrapper {
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mainContent {
+    margin: 0 auto;
+    max-width: 953px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer li {
+    margin: 9px 11px 9px 10px;
+    display: inline-flex;
+    /* border:2px solid transparent; */
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: 0 0 13px rgba(132,131,131,.6);
+    -moz-box-shadow: 0 0 13px rgba(132,131,131,.6);
+	box-shadow: 0 0 13px rgba(132,131,131,.6);
+	float: left;
+}
+
+.footer {
+    text-align: center;
+    bottom: 0;
+    left: 0px;
+    position: absolute;
+    height: 128px;
+   /* width: 100%;*/
+    background-color: #fff;
+  /* column-width: 50px;
+    display: inline-table;*/
+	right:104px;
+	padding-left:20px;
+}
+
+.footer-text p{
+    position: absolute;
+    bottom: 8rem;
+    padding: 0.4rem 41px;
+    background-color: rgba(51,51,51, 0.8);
+    text-align: left;
+    color: #fff;
+    width: 100%;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.75);
+	font-size:17.2px;
+	left:0;
+	  
+}
+.footer .drag-container{float:left;}
+.footer .drag-container ul li.focused.dragged {
+    border: 0px;
+	box-shadow: none;
+}
+.drag-container ul {
+       float: left;
+	  /* display: flex;*/
+	  width:100%;
+}
+
+.rightPanel {
+    background-color: #ffffff;
+    text-align: center;
+    width: 103px;
+   /* height: 100%;*/
+    margin-top: 30px;
+    margin-right: 0px;
+    position: absolute;
+    right: 0px;
+    z-index: 1;
+	cursor:pointer;
+}
+
+.rightPanel-text {
+    position: absolute;
+    right: 0px;
+    width: 103px;
+    height: 30px;
+}
+
+.rightPanel-text p {
+    background-color: rgba(51,51,51, 0.8);
+    text-align: left;
+    color: #fff;
+    line-height:30px;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.75);
+	font-size:17.2px;
+	padding-left: 40px;
+}
+
+.rightsideBtn {
+    width: 99px;
+    height: 67.3px;
+    margin: 0 auto;
+    display: table;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-position: center;
+    border: 2px solid #d6d6d6;
+    -moz-box-shadow: inset 0 0 10px #d6d6d6;
+    -webkit-box-shadow: inset 0 0 10px #d6d6d6;
+    box-shadow: inset 0 0 10px #d6d6d6;
+    margin-bottom:0px;
+    position:relative;
+}
+
+.overlay {
+    background-color: #7a4b8e;
+    /* border: 2px solid #bd9cca; */
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 15px;
+    width: 96px;
+    height: 63.3px;
+    opacity: 0.9;
+    display: table;
+	border: 2px solid #bd9cca;
+}
+
+.overlay span {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50px;
+}
+
+.correctOverlay {
+    background-color: green;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 15px;
+    width: 96px;
+    height: 63.3px;
+    display: table;
+    opacity: 0.9;
+    border: 2px solid #6bca84;
+}
+
+.rightsideBtn.disabled:hover {
+    border: 2px solid #d6d6d6;
+}
+.rightsideBtn.chooseAgain {
+    border: 2px solid #bd9cca;
+	font-weight:600;
+}
+.rightsideBtn.enabled:hover{
+	 border: 2px solid #d6d6d6;
+	 font-weight:600;
+}
+.rightsideBtn:hover{
+ /* border: 2px solid #7B46A3;*/
+    /* border-bottom:0px; */
+}
+.rightsideBtnHover,.rightsideBtnHoverNxt, .rightsideBtnHoverPrev{
+    border: 2px solid #7B46A3;
+}
+
+.correctOverlay span {
+    display: table-cell;
+    vertical-align: middle;
+	font-weight:600;
+}
+.correctOverlay h4{
+	font-size:14px;
+	font-weight:600;
+}
+
+
+.highlight {
+    width: 25px;
+    height: 25px;
+    border-radius: 70%;
+}
+
+.draggable {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+}
+
+.visible {
+    display: block !important;
+}
+
+.contentArea {
+    padding: 0;
+}
+
+.amoniaImg {
+    background: url(../images/UI_images/Buttons/bondC.png);
+}
+
+.atoms {
+    position: static;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	height:46px;
+	width:46px;
+}
+
+#dvDrop {
+    padding: 0px;
+    min-height: 425px;
+    width: 855px;
+}
+
+.mainImage {
+    padding: 150px;
+}
+
+.content-left {
+    width: 248px;
+    float: left;
+}
+
+.molecules-block {
+    height: 498px;
+    width: 100%;
+    float: left;
+}
+
+.molecules-block ul {
+    padding: 15px 30px 0 58px !important;
+}
+
+.molecules-block ul li {
+    margin: 0 0 10px 0 !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+}
+
+.molecules-block ul li a {
+	font-family:'Facit';
+    /*background:url(../images/UI_images/Buttons/btn_Static.jpg) no-repeat;*/
+    border: 2px solid #D4D4D4;
+    border-radius: 7px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 30%, #E8E8E8 100%);
+    background: -webkit-linear-gradient(top, #ffffff 30%, #E8E8E8 100%);
+    background: linear-gradient(to bottom, #ffffff 30%, #E8E8E8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#E8E8E8', GradientType=0);
+    width: 160px;
+    height: 19px;
+    display: block;
+    padding: 3px 0 3px 18px;
+    color: #562c67;
+    text-decoration: none;
+}
+.molecules-block ul li a:hover, .molecules-block ul li a:focus, .molecules-block ul li.focused a {
+
+    border: 2px solid #562c67;
+    /*background:url(../images/UI_images/Buttons/btn_Over.jpg) no-repeat;*/
+}
+
+.content-column {
+    width: 747px;
+    float: left;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+}
+
+.content-sticks-column {
+    float: left;
+    width: 657px;
+}
+
+.bonds-column {
+    float: right;
+    width: 90px;
+}
+
+.bonds-column h2 {
+    background: #a6a6a6;
+    text-align: center;
+    color: #fff;
+    -webkit-text-shadow: 1px 2px 0 rgba(0, 0, 0, .75);
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, .75);
+    line-height: 20px;
+    padding: 3px;
+}
+.allDroppableTarget .dropTarget.filled {
+    box-shadow: rgba(132, 131, 131, 0.6) 0px 0px 13px;
+    -webkit-box-shadow: rgba(132, 131, 131, 0.6) 0px 0px 13px;
+    -moz-box-shadow: rgba(132, 131, 131, 0.6) 0px 0px 13px;
+}
+.target {
+    position: absolute;
+    height: 42px;
+    width: 46px;
+    border-radius: 50%;
+    background: #CD4A4C;
+}
+
+ .footer li:hover, .footer .drag-container ul li.focused {
+     border-radius: 50%;
+     cursor: pointer;
+     -webkit-box-shadow: 0 0 13px #5C488D;
+     -moz-box-shadow: 0 0 13px #5C488D;
+     box-shadow: 0 0 0 2px #5C488D;
+	 border-image:round 2px ;
+	 
+ }
+
+ .footer li.dragged {
+     position: relative;
+     opacity: 1;
+     width: 46px;
+     right: auto;
+     height: 46px;
+     bottom: auto;
+     left: 20px;
+     top: 0px;
+     box-shadow: none;
+ }
+ 
+.MoleculeCanvas {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: none;
+    float: left;
+}
+
+.MoleculeCanvas .structuredAtom {
+    display: none;
+    margin: 0 auto;
+    width: 450px;
+    height: 450px;
+    position: relative;
+    margin-top: 150px;
+}
+
+.allDroppableTarget {
+    width: 450px;
+    text-align: center;
+    float: left;
+    height: 450px;
+    position: absolute;
+    top: 0px;
+}
+
+/*.structuredAtom  > img {margin: 75px 0;}*/
+
+.dropTarget {
+    width: 46px;
+    height: 46px;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+}
+
+.correctMessage {
+    float: left;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    color: grey;
+    display: none;
+}
+
+.correctMessage p {
+    /* color: rgb(255, 255, 255);
+  line-height: 1.133;
+  text-align: center;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);*/
+    position: absolute;
+    left: 330px;
+    top: 480px;
+}
+
+.correctMessage .correctText {
+    color:  #0B8E2D;
+}
+.correctMessage .correctGrayText{ font-size:16px; color:gray;}
+.checkImg {
+    padding-right: 10px;
+    padding-top: 2px;
+    float: right;
+    display: none;
+}
+
+p {
+    margin: 0;
+}
+
+#c-methane {
+    top: 136px;
+    left: 201px;
+}
+
+#h1-methane {
+    left: 326px;
+    top: 175px;
+}
+
+#h2-methane {
+    left: 180px;
+    top: 272px;
+}
+
+#h3-methane {
+    top: 186px;
+    left: -147px;
+}
+
+#h4-methane {
+    top: -49px;
+    left: -23px;
+}
+
+#n-ammonia {
+    top: -30px;
+    left: 196px
+}
+
+#h1-ammonia {
+    top: 47px;
+    left: -28px;
+}
+
+#h2-ammonia {
+    top: 154px;
+    left: 61px;
+}
+
+#h3-ammonia {
+    left: 209px;
+    top: 4px;
+}
+
+#o-water {
+    left: 202px;
+    top: -34px;
+}
+
+#h1-water {
+    left: 11px;
+    top: 88px;
+}
+
+#h2-water {
+    left: 225px;
+    top: 88px;
+}
+
+#o1-oxygen {
+    top: -10px;
+    left: 106px;
+}
+
+#o2-oxygen {
+    left: 241px;
+    top: -10px;
+}
+
+#n1-nitrogen {
+    top: 0px;
+    left: 105px;
+}
+
+#n2-nitrogen {
+    top: 0px;
+    left: 240px;
+}
+
+#c-carbon {
+    left: 200px;
+    top: -10px;
+}
+
+#o1-oxygen1 {
+    left: -50px;
+    top: -10px;
+}
+
+#o2-oxygen2 {
+    top: -10px;
+    left: 285px;
+}
+
+#o1-ozone {
+    top: 95px;
+    left: 66px;
+}
+
+#o2-ozone {
+    top: 103px;
+    left: 285px;
+}
+
+#o3-ozone {
+    top: -33px;
+    left: 95px;
+}
+
+#s-sulfer {
+    top: -36px;
+    left: 207px;
+}
+
+#o1-sulfer {
+    top: 95px;
+    left: 7px;
+}
+
+#o2-sulfer {
+    top: 99px;
+    left: 235px;
+}
+
+#c-carbonMonoxide {
+    left: 100px;
+    top: 0px;
+}
+
+#o-carbonMonoxide {
+    top: 0px;
+    left: 244px;
+}
+
+#h1-formaldehyde {
+    top: 232px;
+    left: -73px;
+}
+
+#h2-formaldehyde {
+    top: 234px;
+    left: 195px;
+}
+
+#c-formaldehyde {
+    top: 135px;
+    left: 200px;
+}
+
+#o-formaldehyde {
+    top: -50px;
+    left: 145px;
+}
+
+.displayNone {
+    display: none
+}
+
+.hidden {
+    visibility: hidden
+}
+#methaneStick{ margin-top: 110px !important; }
+#ammoniaStick, #waterStick { margin-top:210px !important;}
+#carbonDioxideStick, #carbonMonoxideStick, #nitrogenStick, #ozoneStick, #oxygenStick, #sulferDioxideStick { margin-top:242px !important; }
+#formaldehydeStick { margin-top:125px !important}

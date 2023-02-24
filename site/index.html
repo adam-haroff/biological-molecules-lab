@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Shapes of Molecules</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/display.css" rel="stylesheet" type="text/css"/>
+        <link href="css/override.css" rel="stylesheet" type="text/css"/>
+        <link href="css/content.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script> 
+    </head>
+
+    <body>
+        <script type="text/javascript">            
+            function isLoaded($name){
+                document.getElementById($name).setAttribute('data-ready', 'true');
+            }
+        </script>
+        <div id="preloader"><div id="status">&nbsp;</div></div>
+        <div id="fileInput"></div>
+        <div id="container">
+            <div id="topBar">
+                <div id="logo"><img src="images/logo.png" /></div>
+                <div id="topText"><p>SHAPES OF MOLECULES</p></div>
+                <ul id="accessText">
+                    <li class="sideLine"></li>
+                    <li class="sideLine">CLOSE POP-UPS<br />(spacebar)</li>
+                    <li class="sideLine">SELECT MOLECULES<br />(M + (&uarr; or &darr;) + Enter)</li>
+                    <li class="sideLine">SELECT BONDS<br />(B + (&uarr; or &darr;) + Enter)</li>
+                    <li class="sideLine">SELECT ATOMS<br />(A + (&larr; or &rarr;) + Enter)</li>
+                    <li class="sideLine">ACCESSIBILITY KEYS<br />(orange)</li>
+                </ul>
+                <ul id="headIcons" >
+                    <li class="topli accessOff nopointer" id="fiveEight">508</li>
+                    <li class="topli accessOff" id="tutBtn">T</li>
+                </ul>
+            </div>
+            <div id="sideMenu">
+                <div class="draggable"></div>
+                <div id="loadDiv"></div>
+            </div>
+            <div id="contentArea"></div>
+            <div id="popContainer"></div>
+            <div id="accDiv"></div>
+        </div>
+
+        <script src="js/jquery-ui.js" type="text/javascript"></script>
+
+        <script src="js/headerButtons.js" type="text/javascript"></script>
+        <script src="js/jquery.tooltipster.min.js" type="text/javascript"></script>
+        
+        <script src="js/sidePanels.js" type="text/javascript" id="sidePanelsScript" class="preload"></script>
+        <script src="js/popupcontrol.js" type="text/javascript" id="popupcontrolScript" class="preload"></script>
+        
+        <script src="js/content.js" type="text/javascript" id="contentScript" class="preload"></script>
+        
+        <script src="js/accJS.js" type="text/javascript"></script>
+        
+        
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js'></script>
+<script id="browser-resize" src="https://flashmedia.sinclair.edu/dl/DEPT/eCDD/components/browser-resize/js/browser-resize.min.js" type="text/javascript" data-resize-id="container"></script>
+
+        <script type="text/javascript">
+            
+            function startSite() {
+                setupAccessibility();
+                setupContent();                
+                
+                $('#status').fadeOut(); // will first fade out the loading animation
+                $('#preloader').delay(300).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(300).css({'overflow': 'visible'}); 
+                
+                OpenPopUps(popArray[0]);
+                
+                // Temp during development - Automatically closes opening popup
+                //HandleExitClick();
+            }
+            
+            function checkDocument(){ // checks that the whole site is loaded
+                var scripts = document.querySelectorAll('script[class="preload"]');
+                var scriptsReady = false;
+                
+                var interval = setInterval(function() {
+                    
+                    for(var i = 0; i < scripts.length; i++){
+                        var thisScript = scripts[i];
+                        if(thisScript.getAttribute('data-ready') === 'true'){
+                            scriptsReady = true;
+                        }else{
+                            scriptsReady = false;
+                            return;
+                        }
+                    }
+
+                    if((document.readyState === 'complete') && scriptsReady){
+                        clearInterval(interval);
+                        startSite();
+                    }
+                }, 100);
+            }
+            window.onload = checkDocument;
+        </script>
+    </body>
+</html>

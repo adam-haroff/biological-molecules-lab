@@ -1,0 +1,51 @@
+/* Popups adjustments */
+#popContainer {
+    z-index: 99997;
+}
+
+/* Accessibility adjustments */
+#topBar #accessText {
+    right: 30px;
+}
+
+#accessText {
+    z-index: 99998;
+    display: none;
+}
+
+#accDiv {
+    z-index: 99999;
+}
+
+/* Sidepanel adjustments */
+#sideMenu #arrowHolder {
+    bottom: 0;
+    left:0px;
+    margin-left: 0;
+}
+
+#sideMenu #arrowHolder #progress{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: block;
+    padding-top: 7px;
+    float: left;
+    color: white;
+    cursor: default;
+}
+
+#sideMenu h3, #sideMenu .sideText, #sideMenu .inst {
+    
+}
+
+#procedurePanel.content {
+    height: 630px;
+}
+
+/* Content adjustments */
+#contentArea {
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+}

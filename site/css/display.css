@@ -1,0 +1,310 @@
+@import url();
+@import url("reset.css");
+@import url("tooltipster.css");
+@import url("popups.css");
+@import url("acc.css");
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic);
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff; /* change if the mask should have another color then white */
+    z-index:200; /* makes sure it stays on top */
+}
+
+#status {
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%; /* centers the loading animation horizontally one the screen */
+    top:50%; /* centers the loading animation vertically one the screen */
+    background-image:url(../images/status.gif); /* path to your loading animation */
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+#container {     
+    width:1330px !important;
+    height:725px;
+    background-color:#a3a3a3;
+    border:2px solid #000000;
+    position:relative;
+    margin:auto;
+}
+#accDiv {   /* THE DIV THAT MAKES MOUSE CLICKS NOT WORK, FOR ACCESSIBILITY */
+    background-color: rgba(1,255,1,0.0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    z-index:200;
+}
+body{
+   font-family: 'Source Sans Pro', sans-serif;
+    overflow:hidden;
+	/*padding-bottom:6rem;*/
+}
+
+/*========================================
+// HEADER BAR STYLES
+//========================================*/
+#topBar {     /* MAIN TOP BAR STYLING */
+    width:100%;
+    height:42.15px;
+    background-color:#333333;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}
+#topBar #logo{           /* POSITIONING AND SIZE OF LOGO */
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 5px;
+    left: 9px;
+}
+#topBar #topText{        /* POSITIONING AND SIZE OF TEXT */
+    position: absolute;
+    top: 7px;
+    left: 48.60px;
+    font-size:24px;
+    color:#ffffff;
+}
+#topBar ul{              /* DEFINITION FOR <ul> TOP MENU */
+    position: absolute;   
+    top: 0px;
+    right: 0px;
+    list-style-type: none;
+}
+#topBar .topli{           /* STYLING OF TOP MENU BUTTONS */
+    display: inline;
+    position:relative;   
+    padding-top: 12px;
+    width: 41.95px;
+    height:29.95px;
+    border-radius: 10%;
+    float:right;
+    margin-right:5px;
+    font-size: 17px;
+    color:#FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+.nopointer {
+	cursor:default !important;
+}
+
+/*========================================
+// SIDE MENU STYLES
+//========================================*/
+#sideMenu {            /* DEFINITION OF SIDE PANEL MENU */
+    position:absolute;
+    width:300px;
+    height:672px;
+    top: 48px;
+    left: 6px;
+    float:left;
+    background-color:#838383;
+    overflow:hidden;
+}
+#sideMenu h3{                   /* STYLING OF THE ACCORDIAN MENU 'CLICKABLES' */
+    position: relative;
+    height: 30px;
+    width: 300px;
+    background-color: rgba(51,51,51, 0.8);
+    margin-top: 6px;
+    cursor:pointer;
+}
+#sideMenu .topMenu{             /* STYLING OF THE TOP MOST MENU ITEM (IT REMAINS IN THE SAME POSITION) */
+    position: relative;
+    height: 30px;
+    width: 300px;
+    background-color:rgba(51,51,51, 0.8);
+    margin-top: 0px;
+    cursor:pointer;
+}
+.sideText{                      /* STYLING OF THE SIDE MENU TEXT WITHIN THE <h3> TAG */
+    position: absolute;
+    top: 7px;
+    left: 41px;
+    font-size:17.2px;
+    color: white;
+    cursor:pointer;
+}
+.sideLetter {              /* STYLING OF THE LETTER ASSOCIATED W/ EACH MENU ITEM */
+    font-size:17.2px;
+    font-weight:700;
+    width:30px;
+    height:23.5px;
+    text-align:center;
+    padding-top: 6px !important;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.sideNum{                    /* STYLING OF THE NUMBERS AT THE SIDE OF THE PROCEDURE AND DATA TABLES (INACTIVE) */
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    font-size:17.2px;
+    padding-top: 8px;
+    color:#8e8e8e;
+    font-weight:600;
+    width: 30px;
+    height: 22px;
+    text-align:center;
+    background-color: #5d5d5d;
+}
+.sideNumActive{            /* STYLING OF THE NUMBERS AT THE SIDE OF THE PROCEDURE AND DATA TABLES (ACTIVE) */
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    font-size:17.2px;
+    padding-top:8px;
+    background-color:#E85C1C;
+    border-radius: 10%;
+    -webkit-box-shadow:0 0 0 2px #B94800 inset;
+    -moz-box-shadow:0 0 0 2px #B94800 inset;
+    box-shadow:0 0 0 2px #B94800 inset;
+    color:white;
+    font-weight:600;
+    width: 30px;
+    height: 22px;
+    text-align:center;
+
+}
+.sideNumCompleted {      /* STYLING OF THE NUMBERS AT THE SIDE OF THE PROCEDURE AND DATA TABLES WHEN COMPLETED; NOT USED IN ALL LABS, WILL HAVE TO PROGRAM TO USE */
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    font-size:17.2px;
+    padding-top:8px;
+    background-color:#66AF45;
+    border-radius: 10%;
+    -webkit-box-shadow:0 0 0 2px #4D7F33 inset;
+    -moz-box-shadow:0 0 0 2px #4D7F33 inset;
+    box-shadow:0 0 0 2px #4D7F33 inset;
+    color:white;
+    font-weight:600;
+    width: 30px;
+    height: 22px;
+    text-align:center;
+}
+.endNum{                     /*  END NUMBER TO BE FLUSHED AT RIGHT SIDE */
+    margin-right: 0px;
+}
+
+#sideMenu .content{             /* DEFINES THE SIZE OF EACH MEUS CONTENT AREA (YOU NEED TO DO SOME MATH IF YOU ADD/SUBTRACT AN MENU OPTION) */
+    overflow: hidden;
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none;
+    height: 100%;
+    padding: 5px;
+    background-color:#ffffff;
+    position: relative;
+	
+}
+#sideMenu .content::-webkit-scrollbar { width: 0 !important } /*COMPLETLY REMOVE SCROLLBAR IN WEBKIT*/
+#sideMenu ol{                   /* DEFINES THE OL USED IN THE SIDE MENUS */
+    margin-left:33px;
+}
+#sideMenu li {                      /* DEFINES THE LI USED IN THE SIDE MENUS */
+    font-size:14px;
+    font-weight: 400;
+    list-style-type:decimal;
+    margin-right:12px;
+    padding:12px 12px 12px 6px;
+    line-height:130%;
+}
+#arrowHolder{/* DEFINES ATTRIBUTES TO THE ARROW/DOLT AREA */
+    width: 100%;
+    height: 30px;
+    background-color:rgba(51,51,51, 0.8);
+    position: absolute;
+    margin-left: -5px; 
+}
+#arrw_L{                       /* ITS A LEFT ARROW */
+    width: 30px;
+    height:30px;
+    background-image: url(../images/arrow.png);
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+
+}
+#arrw_R{                        /* YOU GUESSED IT, A RIGHT ARROW */
+    width: 30px;
+    height:30px;
+    background-image: url(../images/arrow.png);
+    transform: scaleX(-1);
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+#doltContainer{                 /* DOLT CONTAINER STYLES...THANK YOU AMINE */
+    width:240px;
+    height: 30px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    margin-left: 30px;
+}
+#doltContainer ul{              /* THE UL FOR THE DOLTS IN SIDE PANEL  */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+
+}
+#doltContainer li{              /* INITIAL STYLES FOR DOLTS WHEN THEY ARE CREATED */
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px 8px 0 0;
+    padding: 0;
+}
+#doltContainer li:last-of-type{
+    margin: 0;
+}
+#doltContainer .inactive{       /* COLOR FOR INACTICVE DOLTS */
+    background-color: grey;
+}
+#doltContainer .active{         /* COLOR FOR ACTIVE DOLTS  */
+    background-color: white;
+}
+.testIcon {   /* CLASS FOR THE STAR WARS ICONS IN EQUIPMENT PANEL; CAN BE DELETED WHEN NECESSARY */
+	width:100px;
+	height:100px;
+	margin-left:10px;
+}
+
+
+
+
+
+/*========================================
+// CONENT AREA STYLES
+//========================================*/
+#contentArea {                        /* DEFINES THE MAIN CONTENT/WORK AREA */
+    width: 1012px;
+    height:672px;
+    position: absolute;
+    top: 48px;
+    left: 312px;
+    right: 5px;
+	float:left;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+	background: -webkit-linear-gradient(top, #ffffff 0%,#eeeeee 100%);
+	background: linear-gradient(to bottom, #ffffff 0%,#eeeeee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+    /*background:transparent url(../images/background.png) no-repeat center center; */
+}

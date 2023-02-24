@@ -1,0 +1,176 @@
+<div class="main-content-wrapper">
+<div class="mainContent">
+    <div class="rightPanel-text"><p>BONDS</p><div class="sideLetter sideLetterAccessOff" id="acc_Bonds">B</div></div>
+    <div class="rightPanel" id="bondPanel">
+    	<div data_id="waterMolecule"     id="waterBtn"    style="background-image:url('images/UI_images/Molecules/Molecule1.png');" class="rightsideBtn btn1" ></div>
+        <div data_id="nitrogenMolecule"  id="nitrogenBtn" data_extra_id="carbonMonoxideMolecule" style="background-image:url('images/UI_images/Molecules/Molecule2.png');" class="rightsideBtn btn2"></div>
+        <div data_id="oxygenMolecule"    id="oxygenBtn"   style="background-image:url('images/UI_images/Molecules/Molecule3.png');" class="rightsideBtn btn3"></div>
+        <div data_id="methaneMolecule"   id="methaneBtn"  style="background-image:url('images/UI_images/Molecules/Molecule4.png');" class="rightsideBtn btn4"></div>
+         
+        <div data_id="carbonDioxideMolecule"  id="carbonDioxideBtn" style="background-image:url('images/UI_images/Molecules/Molecule5.png');"  class="rightsideBtn btn5" ></div>
+        <div data_id="sulfurDioxideMolecule"  id="sulfurDioxideBtn" style="background-image:url('images/UI_images/Molecules/Molecule6.png');"  class="rightsideBtn btn6" ></div>
+        <div data_id="formaldehydeMolecule"   id="formaldehydeBtn"  style="background-image:url('images/UI_images/Molecules/Molecule7.png');"  class="rightsideBtn btn7" ></div>
+        <div data_id="ammoniaMolecule" id="ammoniaBtn" style="background-image:url('images/UI_images/Molecules/Molecule8.png');" class="rightsideBtn btn8" ></div>
+        <div data_id="ozoneMolecule"   id="ozoneBtn" data_extra_id="sulfurDioxideMolecule"  style="background-image:url('images/UI_images/Molecules/Molecule9.png');" class="rightsideBtn btn9" ></div>
+    </div>
+	
+    <div id="main-container" class="contentArea">
+    <div id="dvDrop" class="drop-container">
+   		<div class="MoleculeCanvas" id="methaneMoleculeCanvas">
+            <div class="methaneStructure structuredAtom" data-class="methaneMolecule" id="methaneStick">
+                <img src="images/UI_images/Sticks/Methane.png" />
+                <div class="allDroppableTarget">
+                    <span id="c-methane"  class="dropTarget" data-id="carbon1 carbon2 carbon3 carbon4"></span>
+                    <span id="h1-methane" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h2-methane" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h3-methane" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h4-methane" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="ammoniaMoleculeCanvas">
+            <div class="ammoniaStructure structuredAtom" data-class="ammoniaMolecule" id="ammoniaStick">
+                <img src="images/UI_images/Sticks/Ammonia.png" />
+                <div class="allDroppableTarget">
+                    <span id="n-ammonia"  class="dropTarget" data-id="nitrogen1 nitrogen2 nitrogen3"></span>
+                    <span id="h1-ammonia" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h2-ammonia" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h3-ammonia" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="waterMoleculeCanvas">
+            <div class="waterStructure structuredAtom" data-class="waterMolecule" id="waterStick">
+                <img src="images/UI_images/Sticks/Water.png" />
+                <div class="allDroppableTarget">
+                    <span id="o-water"  class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="h1-water" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h2-water" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="oxygenMoleculeCanvas">
+            <div class="oxygenStructure structuredAtom" data-class="oxygenMolecule" id="oxygenStick">
+                <img src="images/UI_images/Sticks/Oxygen.png" />
+                <div class="allDroppableTarget">
+                    <span id="o1-oxygen" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="o2-oxygen" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="nitrogenMoleculeCanvas">
+            <div class="nitrogenStructure structuredAtom" data-class="nitrogenMolecule" id="nitrogenStick">
+                <img src="images/UI_images/Sticks/Nitrogen.png" />
+                <div class="allDroppableTarget">
+                    <span id="n1-nitrogen" class="dropTarget" data-id="nitrogen1 nitrogen2 nitrogen3"></span>
+                    <span id="n2-nitrogen" class="dropTarget" data-id="nitrogen1 nitrogen2 nitrogen3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="carbonDioxideMoleculeCanvas" >
+            <div class="carbonDioxideStructure structuredAtom" data-class="carbonDioxideMolecule" id="carbonDioxideStick">
+                <img src="images/UI_images/Sticks/Carbon Dioxide.png" />
+                <div class="allDroppableTarget">
+                    <span id="c-carbon"   class="dropTarget" data-id="carbon1 carbon2 carbon3 carbon4"></span>
+                    <span id="o1-oxygen1" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="o2-oxygen2" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="ozoneMoleculeCanvas">
+            <div class="ozonStructure structuredAtom" data-class="ozoneMolecule" id="ozoneStick">
+                <img src="images/UI_images/Sticks/Ozone.png" />
+                <div class="allDroppableTarget">
+                    <span id="o1-ozone" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="o2-ozone" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="o3-ozone" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="sulfurDioxideMoleculeCanvas">
+            <div class="sulfurDioxideStructure structuredAtom" data-class="sulfurDioxideMolecule" id="sulferDioxideStick">
+                <img src="images/UI_images/Sticks/SulfurDioxide.png" />
+                <div class="allDroppableTarget">
+                    <span id="s-sulfer" class="dropTarget" data-id="sulfer1 sulfer2"></span>
+                    <span id="o1-sulfer"   class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="o2-sulfer"   class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="carbonMonoxideMoleculeCanvas">
+            <div class="carbonMonoxideStructure structuredAtom" data-class="carbonMonoxideMoleculeCanvas" id="carbonMonoxideStick">
+                <img src="images/UI_images/Sticks/Carbon Monoxide.png" />
+                <div class="allDroppableTarget">
+                    <span id="c-carbonMonoxide" class="dropTarget" data-id="carbon1 carbon2 carbon3 carbon4"></span>
+                    <span id="o-carbonMonoxide" class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="MoleculeCanvas" id="formaldehydeMoleculeCanvas">
+            <div class="formaldehydeStructure structuredAtom" data-class="formaldehydeMolecule" id="formaldehydeStick">
+                <img src="images/UI_images/Sticks/Formaldehyde.png" alt="formal"/>
+                <div class="allDroppableTarget">
+                    <span id="c-formaldehyde"  class="dropTarget" data-id="carbon1 carbon2 carbon3 carbon4"></span>
+                    <span id="o-formaldehyde"  class="dropTarget" data-id="oxygen1 oxygen2 oxygen3"></span>
+                    <span id="h1-formaldehyde" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                    <span id="h2-formaldehyde" class="dropTarget" data-id="hydrogen1 hydrogen2 hydrogen3 hydrogen4 hydrogen5 hydrogen6"></span>
+                </div>
+            </div>
+        </div>
+         <div id="correctMessage" class="correctMessage"><p><span class="correctText">Correct!</span><span class="correctGrayText"> Now choose another molecule.</span></p></div>
+        
+    </div>
+   
+    </div>
+    
+   <div class="footer">
+		<div class="footer-text"> <p>ATOMS </p><div class="sideLetter sideLetterAccessOff" id="acc_Atoms">A</div>
+   		<div id="dvOptionalSource" class="drag-container displayNone hiddenDragContainer"></div>
+                
+                <div id="dvSource" class="drag-container visibleDragContainer">
+  	  
+                     <ul>
+                         <li data_id="carbon1"><img src="images/UI_images/Elements/Carbon_atom.png" class="atoms" alt="carbon" /></li>
+                          <li data_id="carbon2"><img src="images/UI_images/Elements/Carbon_atom.png" class="atoms" alt="carbon" /></li>
+                          
+                          <li data_id="chlorine1"><img src="images/UI_images/Elements/Chlorine_atom.png" class="atoms" alt="chlorine" /></li>
+                    
+                          <li data_id="fluorine1"><img src="images/UI_images/Elements/Fluorine_atom.png" class="atoms" alt="fluorine" /></li>
+                          <li data_id="fluorine2"><img src="images/UI_images/Elements/Fluorine_atom.png" class="atoms" alt="fluorine" /></li>
+                          <li data_id="fluorine3"><img src="images/UI_images/Elements/Fluorine_atom.png" class="atoms" alt="fluorine" /></li>
+                    
+                          <li data_id="hydrogen1"><img src="images/UI_images/Elements/Hydrogen_atom.png" class="atoms" alt="hydrogen" /></li>
+                          <li data_id="hydrogen2"><img src="images/UI_images/Elements/Hydrogen_atom.png" class="atoms" alt="hydrogen" /></li>
+                          <li data_id="hydrogen3"><img src="images/UI_images/Elements/Hydrogen_atom.png" class="atoms" alt="hydrogen" /></li>
+                          
+                          <li data_id="nitrogen1"><img src="images/UI_images/Elements/Nitrogen_atom.png" class="atoms" alt="nitrogen"/></li>
+                          
+                          <li data_id="sulfer1"><img src="images/UI_images/Elements/Sulfur_atom.png" class="atoms" alt="sulfer"/></li>
+                          <li data_id="sulfer2"><img  src="images/UI_images/Elements/Sulfur_atom.png" class="atoms" alt="sulfer"/></li>
+                          <li data_id="oxygen1"><img  src="images/UI_images/Elements/Oxygen_atom.png" class="atoms" alt="oxygen" /></li>
+                    
+                          <li data_id="carbon3"><img src="images/UI_images/Elements/Carbon_atom.png" class="atoms" alt="carbon" /></li>
+                          <li data_id="carbon4"><img src="images/UI_images/Elements/Carbon_atom.png" class="atoms" alt="carbon" /></li>
+                          <li data_id="chlorine2"><img src="images/UI_images/Elements/Chlorine_atom.png" class="atoms" alt="chlorine" /></li>
+                          <li data_id="chlorine3"><img src="images/UI_images/Elements/Chlorine_atom.png" class="atoms" alt="chlorine" /></li>
+                          <li data_id="fluorine4"><img src="images/UI_images/Elements/Fluorine_atom.png" class="atoms" alt="fluorine" /></li>
+                         
+                          <li data_id="fluorine5"><img src="images/UI_images/Elements/Fluorine_atom.png" class="atoms" alt="fluorine" /></li>
+                          
+                          <li data_id="hydrogen4"><img src="images/UI_images/Elements/Hydrogen_atom.png" class="atoms" alt="hydrogen" /></li>
+                          <li data_id="hydrogen5"><img src="images/UI_images/Elements/Hydrogen_atom.png" class="atoms" alt="hydrogen" /></li>
+                          <li data_id="hydrogen6"><img src="images/UI_images/Elements/Hydrogen_atom.png" class="atoms" alt="hydrogen" /></li>
+
+                          <li data_id="nitrogen2"><img src="images/UI_images/Elements/Nitrogen_atom.png" class="atoms" alt="nitrogen" /></li>
+                          
+                          <li data_id="nitrogen3"><img src="images/UI_images/Elements/Nitrogen_atom.png" class="atoms" alt="nitrogen" /></li>
+                          <li data_id="oxygen2"><img src="images/UI_images/Elements/Oxygen_atom.png" class="atoms" alt="oxygen" ></li>
+                          <li data_id="oxygen3"><img src="images/UI_images/Elements/Oxygen_atom.png" class="atoms" alt="oxygen" /></li>
+                    </ul>
+   
+    			</div>
+  </div>
+
+</div>
+</div>
+</div>
