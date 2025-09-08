@@ -1,0 +1,793 @@
+/* ===== CSS RESET ===== */
+:root {
+    --primary-color: #e65c00;
+    --text-color: #333;
+    --background-color: #fff;
+    --header-bg: #4a4a4a;
+    --border-gray: #A3A3A3;
+    --nav-active: #e65c00;
+    --nav-inactive: #666;
+    --focus-outline: 3px solid #0066cc;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: var(--background-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ===== LAYOUT STRUCTURE ===== */
+.lab-interface {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--background-color);
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--header-bg);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-bottom: 2px solid var(--border-gray);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.lab-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.info-btn {
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.info-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.info-btn:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
+.lab-content {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: var(--background-color);
+}
+
+/* ===== SIDEBAR ===== */
+.lab-sidebar {
+    width: 250px;
+    background: var(--background-color);
+    border-right: 2px solid var(--border-gray);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.procedure-section {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.procedure-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.procedure-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.procedure-btn {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--border-gray);
+    background: white;
+    color: var(--nav-inactive);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.procedure-btn:hover {
+    border-color: var(--primary-color);
+    background: #fff5f0;
+    color: var(--primary-color);
+}
+
+.procedure-btn:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.procedure-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.instructions-section {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-gray);
+    flex: 1;
+}
+
+.instruction-list {
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.instruction-list li {
+    counter-increment: step-counter;
+    margin-bottom: 0.75rem;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.instruction-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.molecules-section {
+    padding: 1rem 1.25rem;
+}
+
+.molecules-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.molecules-list {
+    list-style: none;
+}
+
+.molecule-item {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.molecule-item:hover {
+    background: #fff5f0;
+    border-color: var(--primary-color);
+}
+
+.molecule-item.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.molecule-item.completed::after {
+    content: '✓';
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #28a745;
+    font-weight: bold;
+}
+
+.molecule-item.active.completed::after {
+    color: white;
+}
+
+/* ===== WORKSPACE ===== */
+.lab-workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color);
+}
+
+.molecule-display {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.instruction-header {
+    margin-bottom: 1rem;
+}
+
+.current-instruction {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.workspace-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+    margin: 1rem 0;
+}
+
+.molecule-workspace {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    position: relative;
+}
+
+.build-area {
+    width: 100%;
+    height: 100%;
+    border: 3px dashed #e0e0e0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    background: rgba(248, 249, 250, 0.5);
+}
+
+.build-area.drag-over {
+    border-color: var(--primary-color);
+    background: rgba(230, 92, 0, 0.05);
+    border-style: solid;
+}
+
+.build-area-hint {
+    color: #6c757d;
+    font-size: 1.1rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.build-area.has-molecule .build-area-hint {
+    display: none;
+}
+
+/* ===== BOND BUILDING ===== */
+.bond-workspace {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.bond-shape {
+    width: 120px;
+    height: 120px;
+    border: 3px dashed #dee2e6;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bond-shape:hover {
+    border-color: var(--primary-color);
+    background: #fff5f0;
+    transform: scale(1.02);
+}
+
+.bond-shape.selected {
+    border-color: #28a745;
+    background: #f8fff8;
+    border-style: solid;
+}
+
+.bond-shape.error {
+    border-color: #dc3545;
+    background: #fff5f5;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.bond-shape svg {
+    width: 80%;
+    height: 80%;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+/* ===== SINGLE MOLECULE VIEW ===== */
+.single-molecule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.molecule-structure {
+    position: relative;
+    max-width: 400px;
+    max-height: 300px;
+}
+
+.molecule-structure svg {
+    width: 100%;
+    height: auto;
+}
+
+/* ===== ATOMS PALETTE ===== */
+.atoms-palette {
+    background: var(--background-color);
+    border-top: 2px solid var(--border-gray);
+    padding: 1rem 2rem;
+    height: 120px;
+}
+
+.atoms-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.atoms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.atom-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.atom-btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--border-gray);
+    border-radius: 50%;
+    cursor: grab;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+}
+
+.atom-btn:active {
+    cursor: grabbing;
+}
+
+.atom-btn:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.atom-btn.dragging {
+    opacity: 0.7;
+    transform: scale(0.9);
+}
+
+.atom-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ===== ATOM COLORS ===== */
+.atom-carbon {
+    background: #2c3e50;
+    color: white;
+}
+
+.atom-hydrogen {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border-color: #bdc3c7;
+}
+
+.atom-oxygen {
+    background: #e74c3c;
+    color: white;
+}
+
+.atom-nitrogen {
+    background: #3498db;
+    color: white;
+}
+
+/* ===== DROP ZONES ===== */
+.atom-drop-zone {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed #dee2e6;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    transform: translate(-50%, -50%);
+}
+
+.atom-drop-zone.highlight {
+    border-color: var(--primary-color);
+    background: rgba(230, 92, 0, 0.1);
+}
+
+.atom-drop-zone.filled {
+    border-color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.atom-drop-zone .placed-atom {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+}
+
+/* ===== FEEDBACK MESSAGES ===== */
+.feedback {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feedback.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.feedback.info {
+    background: #cce7f0;
+    color: #0c5460;
+    border: 1px solid #b8daff;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-in {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 0.8s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .lab-sidebar {
+        width: 280px;
+    }
+
+    .bond-workspace {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .bond-shape {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lab-content {
+        flex-direction: column;
+    }
+
+    .lab-sidebar {
+        width: 100%;
+        max-height: 200px;
+        border-right: none;
+        border-bottom: 2px solid var(--border-gray);
+    }
+
+    .procedure-section,
+    .instructions-section,
+    .molecules-section {
+        padding: 1rem;
+    }
+
+    .atoms-palette {
+        padding: 1rem;
+        height: auto;
+        min-height: 100px;
+    }
+
+    .atoms-container {
+        gap: 0.75rem;
+    }
+
+    .atom-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .bond-workspace {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .molecule-display {
+        padding: 1rem;
+    }
+
+    .current-instruction {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .lab-sidebar {
+        max-height: 150px;
+    }
+
+    .procedure-nav {
+        gap: 0.25rem;
+    }
+
+    .procedure-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .atoms-container {
+        gap: 0.5rem;
+    }
+
+    .atom-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .atom-btn {
+        border-width: 3px;
+    }
+
+    .procedure-btn {
+        border-width: 3px;
+    }
+
+    .build-area {
+        border-width: 4px;
+    }
+}
+
+/* ===== FOCUS MANAGEMENT ===== */
+.lab-interface:focus-within .atom-btn:focus,
+.lab-interface:focus-within .procedure-btn:focus,
+.lab-interface:focus-within .molecule-item:focus {
+    z-index: 10;
+}
+
+/* Ensure proper tab order */
+.molecule-item {
+    tab-index: 0;
+}
+
+.atom-btn {
+    tab-index: 0;
+}
+
+.procedure-btn {
+    tab-index: 0;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .atoms-palette {
+        display: none;
+    }
+
+    .lab-sidebar {
+        width: 200px;
+    }
+
+    .header {
+        background: #000 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .molecule-display {
+        padding: 1rem;
+    }
+}
