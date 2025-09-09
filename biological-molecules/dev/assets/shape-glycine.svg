@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 343.76 218">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: gray;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+    <symbol id="glycine-shape" viewBox="0 0 343.76 218">
+      <g>
+        <g>
+          <line class="cls-2" x1="137.24" y1="142" x2="67.96" y2="102"/>
+          <line class="cls-2" x1="206.52" y1="102" x2="137.24" y2="142"/>
+          <line class="cls-2" x1="200.52" y1="22" x2="200.52" y2="102"/>
+          <line class="cls-2" x1="212.52" y1="22" x2="212.52" y2="102"/>
+          <line class="cls-2" x1="275.8" y1="142" x2="206.52" y2="102"/>
+          <line class="cls-2" x1="275.8" y1="142" x2="327.76" y2="112"/>
+          <line class="cls-2" x1="67.96" y1="102" x2="16" y2="132"/>
+          <line class="cls-2" x1="137.24" y1="142" x2="137.24" y2="82"/>
+          <line class="cls-2" x1="67.96" y1="102" x2="67.96" y2="42"/>
+          <line class="cls-2" x1="137.24" y1="142" x2="137.24" y2="202"/>
+        </g>
+        <g>
+          <circle class="cls-1" cx="206.52" cy="22" r="22"/>
+          <circle class="cls-1" cx="327.76" cy="112" r="16"/>
+          <circle class="cls-1" cx="16" cy="132" r="16"/>
+          <circle class="cls-1" cx="206.52" cy="102" r="22"/>
+          <circle class="cls-1" cx="275.8" cy="142" r="22"/>
+          <circle class="cls-1" cx="67.96" cy="102" r="22"/>
+          <circle class="cls-1" cx="137.24" cy="142" r="22"/>
+          <circle class="cls-1" cx="137.24" cy="82" r="16"/>
+          <circle class="cls-1" cx="67.96" cy="42" r="16"/>
+          <circle class="cls-1" cx="137.24" cy="202" r="16"/>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+  <g id="procedures">
+    <use width="343.76" height="218" xlink:href="#glycine-shape"/>
+  </g>
+</svg>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biological Molecules Lab</title>
+    <meta name="description" content="Interactive chemistry lab for building biological molecules">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Main Lab Interface -->
+    <main id="lab-interface" class="lab-interface">
+
+        <!-- Header Section -->
+        <header class="lab-header">
+            <h1 class="lab-title">BIOLOGICAL MOLECULES</h1>
+            <div class="header-controls">
+                <button class="info-btn" type="button" aria-label="Lab information and help">
+                    <span class="info-icon">i</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Lab Content Grid -->
+        <div class="lab-content">
+
+            <!-- Left Sidebar -->
+            <aside class="lab-sidebar">
+
+                <!-- Procedure Navigation -->
+                <section class="procedure-section">
+                    <h2 class="procedure-title">Procedure</h2>
+                    <nav class="procedure-nav" role="tablist" aria-label="Lab procedures">
+                        <button class="procedure-btn active" role="tab" aria-selected="true"
+                            aria-controls="procedure-content" data-procedure="0">
+                            1
+                        </button>
+                        <button class="procedure-btn" role="tab" aria-selected="false" aria-controls="procedure-content"
+                            data-procedure="1">
+                            2
+                        </button>
+                        <button class="procedure-btn" role="tab" aria-selected="false" aria-controls="procedure-content"
+                            data-procedure="2">
+                            3
+                        </button>
+                    </nav>
+                </section>
+
+                <!-- Instructions Panel -->
+                <section class="instructions-section">
+                    <div id="procedure-content" class="instructions-content" role="tabpanel">
+                        <ol class="instruction-list">
+                            <li>Select the correct bond shape that matches the active molecule name from the MOLECULES
+                                list below.</li>
+                            <li>Drag atoms from the ATOMS section into the correct positions. Atoms will only lock into
+                                place when positioned correctly.</li>
+                            <li>Look for the checkmark next to the molecule name when you've completed the structure.
+                            </li>
+                            <li>Use the navigation buttons to proceed when ready, or click molecule names to revisit
+                                previous work.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Molecules List -->
+                <section class="molecules-section">
+                    <h2 class="molecules-title">Molecules</h2>
+                    <ul class="molecules-list" role="list" aria-label="Available molecules to build">
+                        <!-- Dynamically populated by JavaScript -->
+                    </ul>
+                </section>
+
+            </aside>
+
+            <!-- Main Workspace -->
+            <section class="lab-workspace">
+
+                <!-- Molecule Display Area -->
+                <div class="molecule-display">
+                    <div class="instruction-header">
+                        <h2 class="current-instruction">Select a procedure to begin</h2>
+                    </div>
+
+                    <div class="workspace-divider"></div>
+
+                    <div class="molecule-workspace">
+                        <!-- Dynamic content populated by JavaScript -->
+                        <div class="placeholder-content">
+                            <p>Choose a procedure to start building molecules!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atoms Palette -->
+                <div class="atoms-palette">
+                    <h3 class="atoms-title">Atoms</h3>
+                    <div class="atoms-container">
+
+                        <div class="atom-group">
+                            <button class="atom-btn hydrogen" type="button" draggable="true" data-atom="H"
+                                aria-label="Hydrogen atom">
+                                <span class="atom-symbol">H</span>
+                            </button>
+                            <span class="atom-label">Hydrogen</span>
+                        </div>
+
+                        <div class="atom-separator"></div>
+
+                        <div class="atom-group">
+                            <button class="atom-btn oxygen" type="button" draggable="true" data-atom="O"
+                                aria-label="Oxygen atom">
+                                <span class="atom-symbol">O</span>
+                            </button>
+                            <span class="atom-label">Oxygen</span>
+                        </div>
+
+                        <div class="atom-separator"></div>
+
+                        <div class="atom-group">
+                            <button class="atom-btn carbon" type="button" draggable="true" data-atom="C"
+                                aria-label="Carbon atom">
+                                <span class="atom-symbol">C</span>
+                            </button>
+                            <span class="atom-label">Carbon</span>
+                        </div>
+
+                        <div class="atom-separator"></div>
+
+                        <div class="atom-group">
+                            <button class="atom-btn nitrogen" type="button" draggable="true" data-atom="N"
+                                aria-label="Nitrogen atom">
+                                <span class="atom-symbol">N</span>
+                            </button>
+                            <span class="atom-label">Nitrogen</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Hidden SVG Templates -->
+    <div class="svg-templates" style="display: none;">
+        <!-- Templates will be loaded dynamically or included here -->
+    </div>
+
+    <!-- Info Modal -->
+    <div class="modal-overlay" id="info-modal" style="display: none;">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>About Biological Molecules Lab</h2>
+                <button class="modal-close" type="button" aria-label="Close information">×</button>
+            </header>
+            <div class="modal-body">
+                <p>This interactive lab helps you learn about biological molecules by building molecular structures step
+                    by step.</p>
+                <h3>How to Use:</h3>
+                <ul>
+                    <li>Choose a procedure (1, 2, or 3) to begin</li>
+                    <li>Select the correct bond shape for each molecule</li>
+                    <li>Drag atoms from the palette to build the structure</li>
+                    <li>Complete all molecules in each procedure to advance</li>
+                </ul>
+                <h3>Procedures:</h3>
+                <ul>
+                    <li><strong>Procedure 1:</strong> Simple molecules (H₂O, O₂, CH₄, CO₂)</li>
+                    <li><strong>Procedure 2:</strong> Amino acids and peptides</li>
+                    <li><strong>Procedure 3:</strong> Carbohydrates and sugars</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+
+</html>
