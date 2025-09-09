@@ -1,13 +1,68 @@
-/* ===== CSS RESET ===== */
+/* ===== REFINED COLOR SYSTEM ===== */
 :root {
-    --primary-color: #e65c00;
-    --text-color: #333;
-    --background-color: #fff;
-    --header-bg: #4a4a4a;
-    --border-gray: #A3A3A3;
-    --nav-active: #e65c00;
-    --nav-inactive: #666;
-    --focus-outline: 3px solid #0066cc;
+    /* Primary Brand Colors - Extracted from Storyboard */
+    --primary-color: #e65c00;              /* Main orange - precise storyboard match */
+    --primary-hover: #d45400;              /* Darker orange for hover states */
+    --primary-light: #ff7519;             /* Lighter orange for accents */
+    --primary-bg: rgba(230, 92, 0, 0.05); /* Very light orange background */
+    
+    /* Gray Scale Hierarchy - Storyboard Precision */
+    --header-bg: #4a4a4a;                 /* Header dark gray */
+    --text-primary: #333333;              /* Primary text - refined */
+    --text-secondary: #666666;            /* Secondary text */
+    --text-muted: #8d8d8d;               /* Muted text */
+    --border-primary: #A3A3A3;           /* Primary borders */
+    --border-light: #d0d0d0;             /* Light borders */
+    --border-subtle: #e8e8e8;            /* Subtle dividers */
+    
+    /* Background Colors - Layered System */
+    --background-primary: #ffffff;         /* Pure white main background */
+    --background-secondary: #fafafa;      /* Subtle off-white sections */
+    --background-tertiary: #f5f5f5;      /* Light gray containers */
+    --background-overlay: rgba(255, 255, 255, 0.95); /* Modal overlays */
+    
+    /* Interactive States */
+    --nav-active: #e65c00;               /* Active navigation */
+    --nav-inactive: #666666;             /* Inactive navigation */
+    --hover-bg: rgba(230, 92, 0, 0.08);  /* Hover backgrounds */
+    --hover-border: #e65c00;             /* Hover border color */
+    --selected-bg: #e65c00;              /* Selected state background */
+    --selected-text: #ffffff;            /* Selected state text */
+    
+    /* Feedback Colors - Enhanced Hierarchy */
+    --success-color: #28a745;            /* Success green */
+    --success-bg: rgba(40, 167, 69, 0.1); /* Success background */
+    --error-color: #dc3545;              /* Error red */
+    --error-bg: rgba(220, 53, 69, 0.1);  /* Error background */
+    --warning-color: #ffc107;            /* Warning yellow */
+    --warning-bg: rgba(255, 193, 7, 0.1); /* Warning background */
+    --info-color: #17a2b8;               /* Info blue */
+    --info-bg: rgba(23, 162, 184, 0.1);  /* Info background */
+    
+    /* Scientific Atom Colors - CPK Standard with Storyboard Refinement */
+    --atom-hydrogen: #ffffff;             /* White for hydrogen */
+    --atom-hydrogen-border: #cccccc;     /* Light gray border */
+    --atom-carbon: #2c2c2c;              /* Dark gray/black for carbon */
+    --atom-oxygen: #ff0000;              /* Red for oxygen */
+    --atom-nitrogen: #0000ff;            /* Blue for nitrogen */
+    
+    /* Focus and Accessibility */
+    --focus-outline: 3px solid #0066cc;  /* Accessible focus indicator */
+    --focus-outline-orange: 3px solid #ff9900; /* Orange focus variant */
+    
+    /* Shadow System - Depth and Hierarchy */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-orange: 0 2px 8px rgba(230, 92, 0, 0.3);
+    
+    /* Spacing Scale - Consistent Measurements */
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;    /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-xxl: 3rem;     /* 48px */
 }
 
 *,
@@ -27,8 +82,8 @@ html {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.5;
-    color: var(--text-color);
-    background: var(--background-color);
+    color: var(--text-primary);
+    background: var(--background-primary);
     height: 100vh;
     overflow: hidden;
 }
@@ -38,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: var(--background-color);
+    background: var(--background-primary);
 }
 
 /* ===== HEADER ===== */
@@ -46,11 +101,12 @@ body {
     background: var(--header-bg);
     color: white;
     padding: 0.75rem 2rem;
-    border-bottom: 2px solid var(--border-gray);
+    border-bottom: 2px solid var(--border-primary);
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-subtle);
 }
 
 .header h1 {
@@ -101,14 +157,14 @@ body {
     display: flex;
     width: 100%;
     height: calc(100vh - 60px);
-    background: var(--background-color);
+    background: var(--background-primary);
 }
 
 /* ===== SIDEBAR ===== */
 .lab-sidebar {
     width: 250px;
-    background: var(--background-color);
-    border-right: 2px solid var(--border-gray);
+    background: var(--background-secondary);
+    border-right: 2px solid var(--border-primary);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -116,14 +172,14 @@ body {
 
 .procedure-section {
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .procedure-title {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-primary);
 }
 
 .procedure-nav {
@@ -134,10 +190,10 @@ body {
 .procedure-btn {
     width: 36px;
     height: 36px;
-    border: 2px solid var(--border-gray);
-    background: white;
+    border: 2px solid var(--border-primary);
+    background: var(--background-primary);
     color: var(--nav-inactive);
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: 600;
     font-size: 0.9rem;
@@ -145,12 +201,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-subtle);
 }
 
 .procedure-btn:hover {
-    border-color: var(--primary-color);
-    background: #fff5f0;
+    border-color: var(--hover-border);
+    background: var(--hover-bg);
     color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
 }
 
 .procedure-btn:focus {
@@ -159,14 +218,15 @@ body {
 }
 
 .procedure-btn.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: white;
+    background: var(--selected-bg);
+    border-color: var(--selected-bg);
+    color: var(--selected-text);
+    box-shadow: var(--shadow-orange);
 }
 
 .instructions-section {
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-light);
     flex: 1;
 }
 
@@ -209,7 +269,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-primary);
 }
 
 .molecules-list {
@@ -219,25 +279,29 @@ body {
 .molecule-item {
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
-    background: white;
-    border: 1px solid var(--border-gray);
-    border-radius: 4px;
+    background: var(--background-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
     font-size: 0.9rem;
+    box-shadow: var(--shadow-subtle);
 }
 
 .molecule-item:hover {
-    background: #fff5f0;
-    border-color: var(--primary-color);
+    background: var(--hover-bg);
+    border-color: var(--hover-border);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
 }
 
 .molecule-item.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: white;
+    background: var(--selected-bg);
+    border-color: var(--selected-bg);
+    color: var(--selected-text);
     font-weight: 600;
+    box-shadow: var(--shadow-orange);
 }
 
 .molecule-item.completed::after {
@@ -246,12 +310,12 @@ body {
     right: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #28a745;
+    color: var(--success-color);
     font-weight: bold;
 }
 
 .molecule-item.active.completed::after {
-    color: white;
+    color: var(--selected-text);
 }
 
 /* ===== WORKSPACE ===== */
@@ -259,7 +323,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: var(--background-color);
+    background: var(--background-primary);
 }
 
 .molecule-display {
@@ -277,7 +341,7 @@ body {
 .current-instruction {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--text-primary);
     text-align: center;
 }
 
@@ -413,17 +477,18 @@ body {
 
 /* ===== ATOMS PALETTE ===== */
 .atoms-palette {
-    background: var(--background-color);
-    border-top: 2px solid var(--border-gray);
+    background: var(--background-secondary);
+    border-top: 2px solid var(--border-primary);
     padding: 1rem 2rem;
     height: 120px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .atoms-title {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-primary);
     text-align: center;
 }
 
@@ -445,7 +510,7 @@ body {
 .atom-btn {
     width: 50px;
     height: 50px;
-    border: 2px solid var(--border-gray);
+    border: 2px solid var(--border-primary);
     border-radius: 50%;
     cursor: grab;
     font-weight: 700;
@@ -456,10 +521,17 @@ body {
     justify-content: center;
     position: relative;
     user-select: none;
+    box-shadow: var(--shadow-subtle);
+}
+
+.atom-btn:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
 }
 
 .atom-btn:active {
     cursor: grabbing;
+    transform: translateY(0);
 }
 
 .atom-btn:focus {
@@ -470,44 +542,54 @@ body {
 .atom-btn.dragging {
     opacity: 0.7;
     transform: scale(0.9);
+    z-index: 1000;
 }
 
-.atom-label {
-    font-size: 0.8rem;
-    color: #6c757d;
-    font-weight: 500;
-    text-align: center;
+/* ===== SCIENTIFIC ATOM COLORS ===== */
+.atom-hydrogen {
+    background: var(--atom-hydrogen);
+    border-color: var(--atom-hydrogen-border);
+    color: var(--text-primary);
 }
 
-/* ===== ATOM COLORS ===== */
 .atom-carbon {
-    background: #2c3e50;
+    background: var(--atom-carbon);
+    border-color: var(--atom-carbon);
     color: white;
 }
 
-.atom-hydrogen {
-    background: #ecf0f1;
-    color: #2c3e50;
-    border-color: #bdc3c7;
-}
-
 .atom-oxygen {
-    background: #e74c3c;
+    background: var(--atom-oxygen);
+    border-color: var(--atom-oxygen);
     color: white;
 }
 
 .atom-nitrogen {
-    background: #3498db;
+    background: var(--atom-nitrogen);
+    border-color: var(--atom-nitrogen);
     color: white;
 }
 
-/* ===== DROP ZONES ===== */
+.atom-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    font-weight: 500;
+}
+
+.atom-separator {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, #dee2e6, transparent);
+}
+
+/* ===== ATOM DROP ZONES ===== */
 .atom-drop-zone {
-    width: 40px;
-    height: 40px;
-    border: 2px dashed #dee2e6;
-    border-radius: 50%;
     position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px dashed transparent;
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
     transform: translate(-50%, -50%);
@@ -535,6 +617,92 @@ body {
     border: none;
 }
 
+/* ===== MODALS ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6c757d;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #f8f9fa;
+    color: #495057;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-body h3 {
+    margin: 1rem 0 0.5rem 0;
+    color: #495057;
+}
+
+.modal-body ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.modal-body li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* ===== DISABLED STATES ===== */
+.atoms-palette.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.procedure-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 /* ===== FEEDBACK MESSAGES ===== */
 .feedback {
     margin-top: 1rem;
@@ -543,119 +711,54 @@ body {
     font-weight: 500;
     text-align: center;
     transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .feedback.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background: var(--success-bg);
+    color: var(--success-color);
+    border-color: var(--success-color);
 }
 
 .feedback.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background: var(--error-bg);
+    color: var(--error-color);
+    border-color: var(--error-color);
+}
+
+.feedback.warning {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+    border-color: var(--warning-color);
 }
 
 .feedback.info {
-    background: #cce7f0;
-    color: #0c5460;
-    border: 1px solid #b8daff;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.4s ease-out;
-}
-
-.animate-slide-in {
-    animation: slideInRight 0.4s ease-out;
-}
-
-.animate-pulse {
-    animation: pulse 0.8s ease-in-out infinite;
+    background: var(--info-bg);
+    color: var(--info-color);
+    border-color: var(--info-color);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1200px) {
-    .lab-sidebar {
-        width: 280px;
-    }
-
-    .bond-workspace {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 1.5rem;
-    }
-
-    .bond-shape {
-        width: 100px;
-        height: 100px;
-    }
-}
-
 @media (max-width: 768px) {
     .lab-content {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
     }
 
     .lab-sidebar {
         width: 100%;
-        max-height: 200px;
         border-right: none;
-        border-bottom: 2px solid var(--border-gray);
+        border-bottom: 1px solid #dee2e6;
+        height: auto;
+        max-height: 200px;
     }
 
-    .procedure-section,
-    .instructions-section,
-    .molecules-section {
+    .molecule-display {
         padding: 1rem;
     }
 
     .atoms-palette {
-        padding: 1rem;
-        height: auto;
-        min-height: 100px;
-    }
-
-    .atoms-container {
-        gap: 0.75rem;
+        padding: 0.75rem 1rem;
     }
 
     .atom-btn {
@@ -665,60 +768,39 @@ body {
     }
 
     .bond-workspace {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lab-header {
+        padding: 1rem;
+    }
+
+    .lab-title {
+        font-size: 1.2rem;
     }
 
     .molecule-display {
         padding: 1rem;
     }
 
-    .current-instruction {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 0.5rem 1rem;
-    }
-
-    .header h1 {
-        font-size: 1.2rem;
-    }
-
-    .lab-sidebar {
-        max-height: 150px;
-    }
-
-    .procedure-nav {
-        gap: 0.25rem;
-    }
-
-    .procedure-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.8rem;
-    }
-
-    .atoms-container {
-        gap: 0.5rem;
+    .atoms-palette {
+        padding: 1rem;
     }
 
     .atom-btn {
         width: 40px;
         height: 40px;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
+    * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -737,57 +819,14 @@ body {
     border: 0;
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .atom-btn {
-        border-width: 3px;
-    }
-
-    .procedure-btn {
-        border-width: 3px;
-    }
-
-    .build-area {
-        border-width: 4px;
-    }
-}
-
-/* ===== FOCUS MANAGEMENT ===== */
-.lab-interface:focus-within .atom-btn:focus,
-.lab-interface:focus-within .procedure-btn:focus,
-.lab-interface:focus-within .molecule-item:focus {
-    z-index: 10;
-}
-
-/* Ensure proper tab order */
-.molecule-item {
-    tab-index: 0;
-}
-
-.atom-btn {
-    tab-index: 0;
-}
-
-.procedure-btn {
-    tab-index: 0;
-}
-
 /* ===== PRINT STYLES ===== */
 @media print {
-    .atoms-palette {
+    .lab-interface {
+        box-shadow: none;
+    }
+
+    .atoms-palette,
+    .header-controls {
         display: none;
-    }
-
-    .lab-sidebar {
-        width: 200px;
-    }
-
-    .header {
-        background: #000 !important;
-        -webkit-print-color-adjust: exact;
-    }
-
-    .molecule-display {
-        padding: 1rem;
     }
 }
