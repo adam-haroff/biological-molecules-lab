@@ -1,5 +1,46 @@
-/* ===== REFINED COLOR SYSTEM ===== */
+/* ===== PROFESSIONAL WEB FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== REFINED DESIGN SYSTEM ===== */
 :root {
+    /* ===== TYPOGRAPHY SYSTEM ===== */
+    /* Font Families - Professional Hierarchy */
+    --font-primary: 'Inter', 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    --font-secondary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-monospace: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+    
+    /* Font Sizes - Modular Scale (Perfect Fourth: 1.333) */
+    --text-xs: 0.75rem;      /* 12px - Labels, captions */
+    --text-sm: 0.875rem;     /* 14px - Secondary text */
+    --text-base: 1rem;       /* 16px - Body text */
+    --text-lg: 1.125rem;     /* 18px - Large body */
+    --text-xl: 1.25rem;      /* 20px - Small headings */
+    --text-2xl: 1.5rem;      /* 24px - Section headings */
+    --text-3xl: 1.875rem;    /* 30px - Page headings */
+    --text-4xl: 2.25rem;     /* 36px - Display text */
+    
+    /* Font Weights - Semantic Naming */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    
+    /* Line Heights - Readable Hierarchy */
+    --leading-tight: 1.25;    /* Headings */
+    --leading-snug: 1.375;    /* UI text */
+    --leading-normal: 1.5;    /* Body text */
+    --leading-relaxed: 1.625; /* Reading text */
+    --leading-loose: 2;       /* Spaced text */
+    
+    /* Letter Spacing - Refined Typography */
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+    
     /* Primary Brand Colors - Extracted from Storyboard */
     --primary-color: #e65c00;              /* Main orange - precise storyboard match */
     --primary-hover: #d45400;              /* Darker orange for hover states */
@@ -77,15 +118,22 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     height: 100%;
+    /* Improve font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.5;
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-normal);
     color: var(--text-primary);
     background: var(--background-primary);
     height: 100vh;
     overflow: hidden;
+    letter-spacing: var(--tracking-normal);
 }
 
 /* ===== LAYOUT STRUCTURE ===== */
@@ -110,16 +158,21 @@ body {
 }
 
 .header h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-tight);
     text-align: center;
     margin: 0;
+    letter-spacing: var(--tracking-wide);
 }
 
 .lab-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-wider);
+    line-height: var(--leading-tight);
 }
 
 .header-controls {
@@ -176,10 +229,13 @@ body {
 }
 
 .procedure-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    margin-bottom: var(--spacing-md);
     color: var(--text-primary);
+    letter-spacing: var(--tracking-normal);
 }
 
 .procedure-nav {
@@ -195,8 +251,11 @@ body {
     color: var(--nav-inactive);
     border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
@@ -237,11 +296,15 @@ body {
 
 .instruction-list li {
     counter-increment: step-counter;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--spacing-sm);
     padding-left: 2rem;
     position: relative;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-normal);
 }
 
 .instruction-list li::before {
@@ -257,8 +320,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-family: var(--font-primary);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
 }
 
 .molecules-section {
@@ -266,10 +331,13 @@ body {
 }
 
 .molecules-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    margin-bottom: var(--spacing-md);
     color: var(--text-primary);
+    letter-spacing: var(--tracking-normal);
 }
 
 .molecules-list {
@@ -277,15 +345,19 @@ body {
 }
 
 .molecule-item {
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     background: var(--background-primary);
     border: 1px solid var(--border-light);
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    font-size: 0.9rem;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-normal);
     box-shadow: var(--shadow-subtle);
 }
 
@@ -339,10 +411,13 @@ body {
 }
 
 .current-instruction {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-family: var(--font-primary);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
     color: var(--text-primary);
     text-align: center;
+    letter-spacing: var(--tracking-normal);
 }
 
 .workspace-divider {
@@ -380,10 +455,14 @@ body {
 }
 
 .build-area-hint {
-    color: #6c757d;
-    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-family: var(--font-secondary);
+    font-size: var(--text-lg);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-relaxed);
     text-align: center;
     pointer-events: none;
+    letter-spacing: var(--tracking-normal);
 }
 
 .build-area.has-molecule .build-area-hint {
@@ -485,11 +564,14 @@ body {
 }
 
 .atoms-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    margin-bottom: var(--spacing-md);
     color: var(--text-primary);
     text-align: center;
+    letter-spacing: var(--tracking-normal);
 }
 
 .atoms-container {
@@ -513,8 +595,11 @@ body {
     border: 2px solid var(--border-primary);
     border-radius: 50%;
     cursor: grab;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
@@ -571,10 +656,14 @@ body {
 }
 
 .atom-label {
-    font-size: 0.8rem;
+    font-family: var(--font-secondary);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-tight);
     color: var(--text-secondary);
     text-align: center;
-    font-weight: 500;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
 }
 
 .atom-separator {
@@ -651,7 +740,12 @@ body {
 
 .modal-header h2 {
     margin: 0;
-    color: #2c3e50;
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-tight);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-normal);
 }
 
 .modal-close {
@@ -679,17 +773,27 @@ body {
 }
 
 .modal-body h3 {
-    margin: 1rem 0 0.5rem 0;
-    color: #495057;
+    margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-normal);
 }
 
 .modal-body ul {
-    margin: 0.5rem 0 1rem 1.5rem;
+    margin: var(--spacing-sm) 0 var(--spacing-md) var(--spacing-lg);
 }
 
 .modal-body li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-secondary);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-normal);
 }
 
 /* ===== DISABLED STATES ===== */
@@ -705,13 +809,17 @@ body {
 
 /* ===== FEEDBACK MESSAGES ===== */
 .feedback {
-    margin-top: 1rem;
-    padding: 0.75rem 1rem;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: 6px;
-    font-weight: 500;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-snug);
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    letter-spacing: var(--tracking-normal);
 }
 
 .feedback.success {
@@ -740,61 +848,100 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+    /* Typography adjustments for tablet */
+    .header h1 {
+        font-size: var(--text-xl);
+    }
+    
+    .current-instruction {
+        font-size: var(--text-lg);
+    }
+    
+    .procedure-title, 
+    .molecules-title, 
+    .atoms-title {
+        font-size: var(--text-base);
+    }
+    
+    .instruction-list li {
+        font-size: var(--text-xs);
+    }
+    
+    /* Layout adjustments */
     .lab-content {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
     }
 
     .lab-sidebar {
-        width: 100%;
+        width: 100%!important;
         border-right: none;
-        border-bottom: 1px solid #dee2e6;
-        height: auto;
-        max-height: 200px;
+        border-bottom: 1px solid #e9ecef;
+        max-height: 40vh;
     }
 
-    .molecule-display {
-        padding: 1rem;
+    .procedure-nav {
+        justify-content: center;
     }
 
-    .atoms-palette {
-        padding: 0.75rem 1rem;
+    .atoms-container {
+        justify-content: space-around;
     }
 
-    .atom-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
-    }
-
-    .bond-workspace {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 1rem;
+    .bond-shapes-grid {
+        max-width: 100%;
+        height: 250px;
     }
 }
 
 @media (max-width: 480px) {
-    .lab-header {
-        padding: 1rem;
+    /* Enhanced mobile typography */
+    html {
+        font-size: 14px; /* Smaller base for mobile */
     }
-
+    
+    .header h1,
     .lab-title {
-        font-size: 1.2rem;
+        font-size: var(--text-lg);
+        letter-spacing: var(--tracking-normal);
     }
-
-    .molecule-display {
-        padding: 1rem;
+    
+    .current-instruction {
+        font-size: var(--text-base);
     }
-
-    .atoms-palette {
-        padding: 1rem;
+    
+    .procedure-title,
+    .molecules-title,
+    .atoms-title {
+        font-size: var(--text-sm);
     }
-
+    
+    .instruction-list li {
+        font-size: var(--text-xs);
+        line-height: var(--leading-normal);
+    }
+    
     .atom-btn {
         width: 40px;
         height: 40px;
-        font-size: 1rem;
+        font-size: var(--text-base);
+    }
+    
+    .atom-label {
+        font-size: 0.6rem;
+    }
+    
+    /* Layout adjustments */
+    .lab-header {
+        padding: var(--spacing-md);
+    }
+
+    .molecule-display {
+        padding: var(--spacing-md);
+    }
+
+    .atoms-palette {
+        padding: var(--spacing-md);
     }
 }
 
