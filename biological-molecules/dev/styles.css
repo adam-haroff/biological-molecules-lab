@@ -8,9 +8,9 @@
     --font-primary: 'Inter', 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     --font-secondary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-monospace: 'SF Mono', 'Monaco', 'Menlo',
-    'Consolas',
-    'Courier New',
-    monospace;
+        'Consolas',
+        'Courier New',
+        monospace;
 
     /* Font Sizes - Modular Scale (Perfect Fourth: 1.333) */
     --text-xs: 0.75rem;
@@ -169,19 +169,50 @@
     --shadow-strong: 0 4px 16px rgba(0, 0, 0, 0.2);
     --shadow-orange: 0 2px 8px rgba(230, 92, 0, 0.3);
 
-    /* Spacing Scale - Consistent Measurements */
-    --spacing-xs: 0.25rem;
-    /* 4px */
-    --spacing-sm: 0.5rem;
-    /* 8px */
-    --spacing-md: 1rem;
-    /* 16px */
-    --spacing-lg: 1.5rem;
-    /* 24px */
-    --spacing-xl: 2rem;
-    /* 32px */
-    --spacing-xxl: 3rem;
-    /* 48px */
+    /* ===== ENHANCED SPACING SYSTEM - Issue #10 ===== */
+    /* Micro Spacing - Precision Layout Control */
+    --spacing-2xs: 0.125rem;   /* 2px - Micro adjustments */
+    --spacing-xs: 0.25rem;     /* 4px - Tight spacing */
+    --spacing-sm: 0.5rem;      /* 8px - Small gaps */
+    --spacing-md: 1rem;        /* 16px - Standard spacing */
+    --spacing-lg: 1.5rem;      /* 24px - Comfortable spacing */
+    --spacing-xl: 2rem;        /* 32px - Large spacing */
+    --spacing-2xl: 2.5rem;     /* 40px - Extra large spacing */
+    --spacing-3xl: 3rem;       /* 48px - Section spacing */
+    --spacing-4xl: 4rem;       /* 64px - Major section spacing */
+    --spacing-5xl: 5rem;       /* 80px - Page spacing */
+    
+    /* Container Padding System - Professional Hierarchy */
+    --container-padding-sm: var(--spacing-md);     /* Small containers */
+    --container-padding-md: var(--spacing-lg);     /* Medium containers */
+    --container-padding-lg: var(--spacing-xl);     /* Large containers */
+    --container-padding-xl: var(--spacing-2xl);    /* Major containers */
+    
+    /* Enhanced Border Radius System */
+    --radius-xs: 0.125rem;     /* 2px - Subtle corners */
+    --radius-sm: 0.25rem;      /* 4px - Small elements */
+    --radius-md: 0.375rem;     /* 6px - Standard radius */
+    --radius-lg: 0.5rem;       /* 8px - Comfortable radius */
+    --radius-xl: 0.75rem;      /* 12px - Large radius */
+    --radius-2xl: 1rem;        /* 16px - Extra large radius */
+    --radius-3xl: 1.5rem;      /* 24px - Major elements */
+    --radius-full: 9999px;     /* Fully rounded */
+    
+    /* Enhanced Shadow System - Professional Depth */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-outline: 0 0 0 3px rgba(230, 92, 0, 0.5);
+    
+    /* Legacy shadow support - maintain backward compatibility */
+    --shadow-subtle: var(--shadow-sm);
+    --shadow-medium: var(--shadow-md);
+    --shadow-strong: var(--shadow-lg);
+    --shadow-orange: 0 2px 8px rgba(230, 92, 0, 0.3);
 }
 
 *,
@@ -214,25 +245,74 @@ body {
     letter-spacing: var(--tracking-normal);
 }
 
-/* ===== LAYOUT STRUCTURE ===== */
+/* ===== ENHANCED LAYOUT STRUCTURE - Issue #10 ===== */
 .lab-interface {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: var(--background-primary);
+    background: linear-gradient(
+        135deg,
+        var(--background-primary) 0%,
+        var(--background-secondary) 100%
+    );
+    /* Enhanced container depth with subtle gradient */
+    box-shadow: var(--shadow-inner);
+    position: relative;
 }
 
-/* ===== HEADER ===== */
+.lab-interface::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(230, 92, 0, 0.02) 0%, transparent 25%),
+        radial-gradient(circle at 75% 75%, rgba(230, 92, 0, 0.01) 0%, transparent 25%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lab-interface > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== ENHANCED HEADER - Issue #10 ===== */
 .header {
-    background: var(--header-bg);
+    background: linear-gradient(
+        135deg,
+        var(--header-bg) 0%,
+        #3d3d3d 100%
+    );
     color: white;
-    padding: 0.75rem 2rem;
-    border-bottom: 2px solid var(--border-primary);
-    height: 60px;
+    padding: var(--container-padding-md) var(--spacing-2xl);
+    border-bottom: 3px solid var(--border-primary);
+    height: 64px; /* Slightly increased for better proportions */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-subtle);
+    box-shadow: 
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--primary-color) 50%,
+        transparent 100%
+    );
 }
 
 .header h1 {
@@ -310,26 +390,64 @@ body {
     outline-offset: 2px;
 }
 
+/* ===== ENHANCED MAIN CONTENT - Issue #10 ===== */
 .lab-content {
     display: flex;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 64px); /* Adjusted for new header height */
     background: var(--background-primary);
+    position: relative;
+    gap: var(--spacing-2xs); /* Subtle gap for container separation */
 }
 
-/* ===== SIDEBAR ===== */
+/* ===== ENHANCED SIDEBAR - Issue #10 ===== */
 .lab-sidebar {
-    width: 250px;
-    background: var(--background-secondary);
-    border-right: 2px solid var(--border-primary);
+    width: 260px; /* Slightly wider for better proportions */
+    background: linear-gradient(
+        180deg,
+        var(--background-secondary) 0%,
+        rgba(250, 250, 250, 0.95) 100%
+    );
+    border-right: 3px solid var(--border-primary);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    box-shadow: 
+        var(--shadow-lg),
+        inset -1px 0 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 5;
+}
+
+.lab-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        var(--primary-color) 20%,
+        var(--primary-color) 80%,
+        transparent 100%
+    );
+    opacity: 0.3;
 }
 
 .procedure-section {
-    padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--border-light);
+    padding: var(--container-padding-lg) var(--container-padding-md);
+    border-bottom: 2px solid var(--border-light);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(250, 250, 250, 0.6) 100%
+    );
+    margin: var(--spacing-xs);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    position: relative;
 }
 
 .procedure-title {
@@ -449,7 +567,16 @@ body {
 }
 
 .molecules-section {
-    padding: 1rem 1.25rem;
+    padding: var(--container-padding-lg) var(--container-padding-md);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(250, 250, 250, 0.6) 100%
+    );
+    margin: var(--spacing-xs);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(230, 92, 0, 0.1);
 }
 
 .molecules-title {
@@ -539,24 +666,64 @@ body {
     color: var(--selected-text);
 }
 
-/* ===== WORKSPACE ===== */
+/* ===== ENHANCED WORKSPACE - Issue #10 ===== */
 .lab-workspace {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: var(--background-primary);
+    background: linear-gradient(
+        145deg,
+        var(--background-primary) 0%,
+        rgba(255, 255, 255, 0.98) 50%,
+        var(--background-secondary) 100%
+    );
+    margin: var(--spacing-xs);
+    border-radius: var(--radius-xl);
+    box-shadow: 
+        var(--shadow-md),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+}
+
+.lab-workspace::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--primary-color) 50%,
+        transparent 100%
+    );
+    opacity: 0.6;
 }
 
 .molecule-display {
     flex: 1;
-    padding: 1.5rem;
+    padding: var(--container-padding-xl);
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
+/* Enhanced instruction header */
 .instruction-header {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: linear-gradient(
+        135deg,
+        rgba(230, 92, 0, 0.05) 0%,
+        rgba(230, 92, 0, 0.02) 100%
+    );
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(230, 92, 0, 0.15);
+    box-shadow: var(--shadow-sm);
 }
 
 .current-instruction {
@@ -567,12 +734,37 @@ body {
     color: var(--text-primary);
     text-align: center;
     letter-spacing: var(--tracking-normal);
+    margin: 0;
 }
 
 .workspace-divider {
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
-    margin: 1rem 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(230, 92, 0, 0.3) 10%,
+        var(--primary-color) 50%,
+        rgba(230, 92, 0, 0.3) 90%,
+        transparent 100%
+    );
+    margin: var(--spacing-xl) 0;
+    border-radius: var(--radius-full);
+    position: relative;
+}
+
+.workspace-divider::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 25%;
+    right: 25%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        transparent 100%
+    );
 }
 
 .molecule-workspace {
@@ -580,8 +772,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 300px;
+    min-height: 320px; /* Slightly increased for better proportions */
     position: relative;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(250, 250, 250, 0.7) 50%,
+        rgba(245, 245, 245, 0.5) 100%
+    );
+    border: 2px dashed rgba(230, 92, 0, 0.2);
+    border-radius: var(--radius-2xl);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-2xl);
+    box-shadow: 
+        inset 0 2px 8px rgba(0, 0, 0, 0.05),
+        var(--shadow-sm);
+}
+
+.molecule-workspace::before {
+    content: '';
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    bottom: var(--spacing-md);
+    border: 1px solid rgba(230, 92, 0, 0.1);
+    border-radius: var(--radius-xl);
+    pointer-events: none;
 }
 
 .placeholder-content {
@@ -678,7 +895,7 @@ body {
     padding: 1rem;
     border-radius: var(--radius-lg);
     background: var(--background-tertiary);
-    box-shadow: 
+    box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.08),
         0 1px 4px rgba(0, 0, 0, 0.04);
     transition: all var(--duration-normal) var(--easing-smooth);
@@ -686,7 +903,7 @@ body {
 
 .molecule-structure:hover {
     transform: translateY(-2px);
-    box-shadow: 
+    box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.12),
         0 4px 8px rgba(0, 0, 0, 0.06);
 }
@@ -813,9 +1030,8 @@ body {
 /* Interactive Molecular Hover Effects */
 .molecule-structure:hover svg circle {
     transform: scale(1.05);
-    filter: 
-        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2))
-        brightness(1.1);
+    filter:
+        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2)) brightness(1.1);
 }
 
 .molecule-structure:hover svg line {
@@ -825,11 +1041,14 @@ body {
 
 /* Molecular Animation for Educational Engagement */
 @keyframes molecularPulse {
-    0%, 100% { 
+
+    0%,
+    100% {
         transform: scale(1);
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
-    50% { 
+
+    50% {
         transform: scale(1.02);
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     }
@@ -845,11 +1064,9 @@ body {
     border-radius: var(--radius-lg);
     padding: 2rem;
     min-height: 200px;
-    background: linear-gradient(
-        135deg,
-        var(--background-tertiary) 0%,
-        rgba(255, 255, 255, 0.8) 100%
-    );
+    background: linear-gradient(135deg,
+            var(--background-tertiary) 0%,
+            rgba(255, 255, 255, 0.8) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -865,12 +1082,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        45deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.1) 50%,
-        transparent 70%
-    );
+    background: linear-gradient(45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 70%);
     transform: translateX(-100%);
     transition: transform 0.6s ease;
 }
@@ -881,24 +1096,20 @@ body {
 
 .molecule-drop-zone.drag-over {
     border-color: var(--accent-primary);
-    background: linear-gradient(
-        135deg,
-        rgba(52, 152, 219, 0.1) 0%,
-        rgba(155, 89, 182, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(52, 152, 219, 0.1) 0%,
+            rgba(155, 89, 182, 0.1) 100%);
     transform: scale(1.02);
-    box-shadow: 
+    box-shadow:
         0 8px 32px rgba(52, 152, 219, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .molecule-drop-zone.has-molecule {
     border-color: var(--success-primary);
-    background: linear-gradient(
-        135deg,
-        rgba(46, 204, 113, 0.1) 0%,
-        rgba(39, 174, 96, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(46, 204, 113, 0.1) 0%,
+            rgba(39, 174, 96, 0.1) 100%);
 }
 
 /* Scientific Bond Types */
@@ -939,9 +1150,11 @@ body {
         transform: scale(0.9) rotate(-5deg);
         filter: blur(4px);
     }
+
     50% {
         transform: scale(1.1) rotate(2deg);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) rotate(0deg);
@@ -964,9 +1177,11 @@ body {
         transform: scale(0) rotate(180deg);
         opacity: 0;
     }
+
     70% {
         transform: scale(1.2) rotate(-10deg);
     }
+
     100% {
         transform: scale(1) rotate(0deg);
         opacity: 1;
@@ -976,21 +1191,17 @@ body {
 /* Molecular Structure States */
 .molecule-structure.building {
     border: 2px dashed var(--accent-secondary);
-    background: linear-gradient(
-        135deg,
-        rgba(155, 89, 182, 0.05) 0%,
-        rgba(52, 152, 219, 0.05) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(155, 89, 182, 0.05) 0%,
+            rgba(52, 152, 219, 0.05) 100%);
 }
 
 .molecule-structure.completed {
     border: 2px solid var(--success-primary);
-    background: linear-gradient(
-        135deg,
-        rgba(46, 204, 113, 0.1) 0%,
-        rgba(39, 174, 96, 0.1) 100%
-    );
-    box-shadow: 
+    background: linear-gradient(135deg,
+            rgba(46, 204, 113, 0.1) 0%,
+            rgba(39, 174, 96, 0.1) 100%);
+    box-shadow:
         0 8px 32px rgba(46, 204, 113, 0.2),
         0 4px 16px rgba(46, 204, 113, 0.1);
 }
@@ -1003,12 +1214,10 @@ body {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
     border-radius: inherit;
     opacity: 0;
     transition: opacity var(--duration-normal) var(--easing-smooth);
@@ -1019,13 +1228,37 @@ body {
     opacity: 1;
 }
 
-/* ===== ATOMS PALETTE ===== */
+/* ===== ENHANCED ATOMS PALETTE - Issue #10 ===== */
 .atoms-palette {
-    background: var(--background-secondary);
-    border-top: 2px solid var(--border-primary);
-    padding: 1rem 2rem;
-    height: 120px;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+        180deg,
+        rgba(250, 250, 250, 0.95) 0%,
+        var(--background-secondary) 100%
+    );
+    border-top: 3px solid var(--border-primary);
+    padding: var(--container-padding-lg) var(--container-padding-xl);
+    height: 130px; /* Slightly increased for better proportions */
+    box-shadow: 
+        0 -4px 16px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 10;
+}
+
+.atoms-palette::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--primary-color) 50%,
+        transparent 100%
+    );
+    opacity: 0.5;
 }
 
 .atoms-title {
@@ -1658,4 +1891,165 @@ button:focus::after,
 
 .success-pulse {
     animation: successPulse 0.6s ease-out;
+}
+
+/* ===== ENHANCED CONTAINER UTILITIES - Issue #10 ===== */
+
+/* Container Elevation System */
+.container-elevated-1 {
+    box-shadow: var(--shadow-sm);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.container-elevated-2 {
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.container-elevated-3 {
+    box-shadow: var(--shadow-lg);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Professional Container Borders */
+.container-bordered {
+    border: 1px solid var(--border-light);
+}
+
+.container-bordered-primary {
+    border: 2px solid var(--border-primary);
+}
+
+.container-bordered-accent {
+    border: 2px solid rgba(230, 92, 0, 0.3);
+}
+
+/* Container Spacing Utilities */
+.container-spacing-sm {
+    padding: var(--container-padding-sm);
+}
+
+.container-spacing-md {
+    padding: var(--container-padding-md);
+}
+
+.container-spacing-lg {
+    padding: var(--container-padding-lg);
+}
+
+.container-spacing-xl {
+    padding: var(--container-padding-xl);
+}
+
+/* Container Background Treatments */
+.container-bg-subtle {
+    background: linear-gradient(
+        135deg,
+        rgba(250, 250, 250, 0.8) 0%,
+        rgba(245, 245, 245, 0.6) 100%
+    );
+}
+
+.container-bg-accent {
+    background: linear-gradient(
+        135deg,
+        rgba(230, 92, 0, 0.05) 0%,
+        rgba(230, 92, 0, 0.02) 100%
+    );
+}
+
+.container-bg-primary {
+    background: linear-gradient(
+        135deg,
+        var(--background-primary) 0%,
+        var(--background-secondary) 100%
+    );
+}
+
+/* Enhanced Visual Hierarchy */
+.container-section {
+    margin: var(--spacing-lg) 0;
+    padding: var(--container-padding-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    background: var(--background-primary);
+    border: 1px solid var(--border-light);
+}
+
+.container-section-primary {
+    border-color: var(--primary-color);
+    box-shadow: 
+        var(--shadow-md),
+        0 0 0 1px rgba(230, 92, 0, 0.1);
+}
+
+.container-section-elevated {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Container Interaction States */
+.container-interactive {
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.container-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.container-interactive:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+/* Professional Content Separation */
+.content-separator {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--border-light) 20%,
+        var(--border-primary) 50%,
+        var(--border-light) 80%,
+        transparent 100%
+    );
+    margin: var(--spacing-xl) 0;
+}
+
+.content-separator-primary {
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(230, 92, 0, 0.3) 20%,
+        var(--primary-color) 50%,
+        rgba(230, 92, 0, 0.3) 80%,
+        transparent 100%
+    );
+}
+
+/* Enhanced Focus and Accessibility */
+.container-focusable {
+    outline: none;
+    transition: box-shadow var(--transition-normal);
+}
+
+.container-focusable:focus {
+    box-shadow: 
+        var(--shadow-outline),
+        var(--shadow-md);
+}
+
+/* Responsive Container Adjustments */
+@media (max-width: 768px) {
+    .container-spacing-responsive {
+        padding: var(--container-padding-sm);
+    }
+    
+    .container-section {
+        margin: var(--spacing-md) 0;
+        padding: var(--container-padding-md);
+    }
 }
